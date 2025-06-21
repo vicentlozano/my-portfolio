@@ -13,7 +13,9 @@ import HeaderComponent from '../components/HeaderComponent.vue';
 <style scoped>
 .grid {
   display: grid;
+  width: 100%;
   grid-template-rows: min-content 1fr min-content;
+
   background: linear-gradient(
     145deg,
     rgba(2, 0, 36, 1) 0%,
