@@ -1,0 +1,81 @@
+🏠 / – Home
+Objectiu: Primera impressió — presentació breu i atractiva.
+Contingut típic:
+
+Frase destacada o hero section amb nom i especialitat.
+
+Botó a "Veure projectes" o "Sobre mi".
+
+Imatge, avatar o animació CSS.
+
+Frases com: "Hola, soc Vicent, desenvolupador full-stack..."
+
+👤 /aboutme – About Me
+Objectiu: Presentar-te de forma més personal i professional.
+Contingut típic:
+
+Biografia personal/professional.
+
+Valors, interessos, filosofia de treball.
+
+Timeline o història de com has arribat a ser dev.
+
+Foto teua (opcional) o avatar.
+
+Links socials o al teu CV.
+
+🗂 /projects – Projects
+Objectiu: Mostrar el teu treball i projectes destacats.
+Contingut típic:
+
+Targetes amb imatges, nom, descripció i tecnologies.
+
+Enllaç al repositori (GitHub) i demo si en tens.
+
+Filtres per categoria o tecnologia.
+
+Explicació de rol si és un projecte en equip.
+
+⭐ /skills – Skills
+Objectiu: Mostrar les tecnologies i competències.
+Contingut típic:
+
+Llenguatges (JS, TS, PHP...), frameworks (Vue, Quasar, Symfony...).
+
+Icons, gràfics o llistes.
+
+Percentatges, nivells o “experiència amb” (millor no exagerar).
+
+Soft skills també poden tindre lloc: treball en equip, adaptabilitat...
+
+💼 /experience – Experience
+Objectiu: Explicar la teua experiència laboral o col·laboracions.
+Contingut típic:
+
+Cronologia de llocs de treball, pràctiques o projectes col·laboratius.
+
+Nom de l’empresa, rol, dates, funcions, tecnologies usades.
+
+També pots incloure projectes personals rellevants.
+
+📬 /contact – Contact
+Objectiu: Que puguen contactar-te fàcilment.
+Contingut típic:
+
+Formulari de contacte (nom, correu, missatge).
+
+Botons a LinkedIn, GitHub, correu, etc.
+
+Potser un missatge final del tipus: "Estic obert a col·laboracions!"
+
+📓 /blog – Blog
+Objectiu: Compartir coneixement, reflexions o tutorials.
+Contingut típic:
+
+Llista d’articles amb títol, descripció curta i data.
+
+Detall d’un article individual (markdown o HTML).
+
+Categories, cerca o etiquetes (si tens molts posts).
+
+Enllaços a recursos externs o a GitHub.
