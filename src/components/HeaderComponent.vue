@@ -1,63 +1,78 @@
 <template>
   <div class="header">
-    <section class="title">
+    <section class="title" v-if="$q.screen.width > 800">
       <span class="rotul">&lt;</span>vilodev<span class="rotul">/&gt;</span>
     </section>
     <section class="routes">
       <router-link to="/" :class="route.path === '/' ? 'custom-link on-route' : 'custom-link'">
-        <q-icon class="pre-icon" name="mdi-home" /> Home
+        <q-icon class="pre-icon" name="mdi-home" /> <span v-if="$q.screen.width > 1200">Home</span>
       </router-link>
 
       <router-link
         to="/aboutme"
         :class="route.path === '/aboutme' ? 'custom-link on-route' : 'custom-link'"
       >
-        <q-icon class="pre-icon" name="mdi-account" /> About Me
+        <q-icon class="pre-icon" name="mdi-account" />
+        <span v-if="$q.screen.width > 1200">About Me</span>
       </router-link>
 
       <router-link
         to="/projects"
         :class="route.path === '/projects' ? 'custom-link on-route' : 'custom-link'"
       >
-        <q-icon class="pre-icon" name="mdi-folder-outline" /> Projects
+        <q-icon class="pre-icon" name="mdi-folder-outline" />
+        <span v-if="$q.screen.width > 1200">Projects</span>
       </router-link>
 
       <router-link
         to="/skills"
         :class="route.path === '/skills' ? 'custom-link on-route' : 'custom-link'"
       >
-        <q-icon class="pre-icon" name="mdi-star-outline" /> Skills
+        <q-icon class="pre-icon" name="mdi-star-outline" />
+        <span v-if="$q.screen.width > 1200">Skills</span>
       </router-link>
 
       <router-link
         to="/experience"
         :class="route.path === '/experience' ? 'custom-link on-route' : 'custom-link'"
       >
-        <q-icon class="pre-icon" name="mdi-briefcase-outline" /> Experience
+        <q-icon class="pre-icon" name="mdi-briefcase-outline" />
+        <span v-if="$q.screen.width > 1200">Experience</span>
       </router-link>
 
       <router-link
         to="/contact"
         :class="route.path === '/contact' ? 'custom-link on-route' : 'custom-link'"
       >
-        <q-icon class="pre-icon" name="mdi-email-outline" /> Contact
+        <q-icon class="pre-icon" name="mdi-email-outline" />
+        <span v-if="$q.screen.width > 1200">Contact</span>
       </router-link>
 
       <router-link
         to="/blog"
         :class="route.path === '/blog' ? 'custom-link on-route' : 'custom-link'"
       >
-        <q-icon class="pre-icon" name="mdi-notebook-outline" /> Blog
+        <q-icon class="pre-icon" name="mdi-notebook-outline" />
+        <span v-if="$q.screen.width > 1200">Blog</span>
       </router-link>
     </section>
 
-    <section class="actions">I18N</section>
+    <section class="actions" v-if="$q.screen.width > 800">
+      <q-btn flat round color="primary" icon="mdi-cog"
+        ><q-tooltip transition-show="flip-right" transition-hide="flip-left">
+          Configuration
+        </q-tooltip></q-btn
+      >
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
+import { useQuasar } from 'quasar';
+
 //data
+const $q = useQuasar();
 const route = useRoute();
 </script>
 
@@ -110,5 +125,24 @@ const route = useRoute();
 .rotul {
   color: rgb(13, 116, 211);
   font-weight: 800;
+}
+@media (max-width: 800px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    place-items: center;
+    height: 5rem;
+  }
+  .routes {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    gap: 1px;
+  }
+  .custom-link {
+    padding: 0.5rem 0.5rem;
+  }
 }
 </style>
