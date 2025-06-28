@@ -8,7 +8,6 @@ const routes: RouteRecordRaw[] = [
       { path: '',  name:'Home' ,  component: () => import('pages/HomePage.vue') },
       { path: 'aboutme',name:'About Me' ,  component: () => import('pages/AboutPage.vue') },
       { path: 'projects',name:'Projects' ,  component: () => import('pages/ProjectsPage.vue') },
-      { path: 'skills',name:'Skills' ,  component: () => import('pages/SkillsPage.vue') },
       { path: 'experience',name:'Experience' ,  component: () => import('pages/ExperiencePage.vue') },
       { path: 'contact',name:'Contact' ,  component: () => import('pages/ContactPage.vue') },
       { path: 'blog',name:'Blog' ,  component: () => import('pages/BlogPage.vue') },

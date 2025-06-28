@@ -6,7 +6,11 @@
     <section class="routes">
       <router-link to="/" :class="route.path === '/' ? 'custom-link on-route' : 'custom-link'">
         <q-icon class="pre-icon" name="mdi-home" /> <span v-if="$q.screen.width > 1200">Home</span>
-        <q-tooltip  v-if="$q.screen.width > 800 &&  $q.screen.width < 1200" transition-show="flip-right" transition-hide="flip-left">
+        <q-tooltip
+          v-if="$q.screen.width > 800 && $q.screen.width < 1200"
+          transition-show="flip-right"
+          transition-hide="flip-left"
+        >
           Home
         </q-tooltip>
       </router-link>
@@ -17,7 +21,11 @@
       >
         <q-icon class="pre-icon" name="mdi-account" />
         <span v-if="$q.screen.width > 1200">About Me</span>
-        <q-tooltip  v-if="$q.screen.width > 800 &&  $q.screen.width < 1200" transition-show="flip-right" transition-hide="flip-left">
+        <q-tooltip
+          v-if="$q.screen.width > 800 && $q.screen.width < 1200"
+          transition-show="flip-right"
+          transition-hide="flip-left"
+        >
           About Me
         </q-tooltip>
       </router-link>
@@ -28,21 +36,15 @@
       >
         <q-icon class="pre-icon" name="mdi-folder-outline" />
         <span v-if="$q.screen.width > 1200">Projects</span>
-        <q-tooltip  v-if="$q.screen.width > 800 &&  $q.screen.width < 1200" transition-show="flip-right" transition-hide="flip-left">
+        <q-tooltip
+          v-if="$q.screen.width > 800 && $q.screen.width < 1200"
+          transition-show="flip-right"
+          transition-hide="flip-left"
+        >
           Projects
         </q-tooltip>
       </router-link>
 
-      <router-link
-        to="/skills"
-        :class="route.path === '/skills' ? 'custom-link on-route' : 'custom-link'"
-      >
-        <q-icon class="pre-icon" name="mdi-star-outline" />
-        <span v-if="$q.screen.width > 1200">Skills</span>
-        <q-tooltip  v-if="$q.screen.width > 800 &&  $q.screen.width < 1200" transition-show="flip-right" transition-hide="flip-left">
-          Skills
-        </q-tooltip>
-      </router-link>
 
       <router-link
         to="/experience"
@@ -50,7 +52,11 @@
       >
         <q-icon class="pre-icon" name="mdi-briefcase-outline" />
         <span v-if="$q.screen.width > 1200">Experience</span>
-        <q-tooltip  v-if="$q.screen.width > 800 &&  $q.screen.width < 1200" transition-show="flip-right" transition-hide="flip-left">
+        <q-tooltip
+          v-if="$q.screen.width > 800 && $q.screen.width < 1200"
+          transition-show="flip-right"
+          transition-hide="flip-left"
+        >
           Experience
         </q-tooltip>
       </router-link>
@@ -61,7 +67,11 @@
       >
         <q-icon class="pre-icon" name="mdi-email-outline" />
         <span v-if="$q.screen.width > 1200">Contact</span>
-        <q-tooltip  v-if="$q.screen.width > 800 &&  $q.screen.width < 1200" transition-show="flip-right" transition-hide="flip-left">
+        <q-tooltip
+          v-if="$q.screen.width > 800 && $q.screen.width < 1200"
+          transition-show="flip-right"
+          transition-hide="flip-left"
+        >
           Contact
         </q-tooltip>
       </router-link>
@@ -72,7 +82,11 @@
       >
         <q-icon class="pre-icon" name="mdi-notebook-outline" />
         <span v-if="$q.screen.width > 1200">Blog</span>
-        <q-tooltip  v-if="$q.screen.width > 800 &&  $q.screen.width < 1200" transition-show="flip-right" transition-hide="flip-left">
+        <q-tooltip
+          v-if="$q.screen.width > 800 && $q.screen.width < 1200"
+          transition-show="flip-right"
+          transition-hide="flip-left"
+        >
           Blog
         </q-tooltip>
       </router-link>
@@ -105,6 +119,8 @@ const route = useRoute();
   padding: 1rem 3rem;
   place-items: center;
   height: 5rem;
+  backdrop-filter: blur(20px);
+  background-color: rgba(7, 32, 52, 0.509);
 }
 .routes {
   display: flex;
