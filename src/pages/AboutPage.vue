@@ -79,26 +79,142 @@
         </article>
       </div>
     </section>
+    <h4 class="section-tittle">Mis habilidades y conocimientos</h4>
     <section class="skills">
-      <h4 class="section-tittle">Mis habilidades y conocimientos</h4>
-      <section class="grid-valors">
-        <p>VUe.js</p>
-        <p>El esfuerzo y dedicacion no se negocia</p>
-        <p>Disfruto trabajando en equipo y compartir conociemientos</p>
-        <p>Codigo limpio y reutilizable</p>
-        <p>La perfeccion no existe, pero siemprre podemos acercarnos un poco mas</p>
-        <p>El respeto y la integracion es esencial</p>
+      <section class="skills-schem" style="background-color: rgba(21, 100, 0, 0.1)">
+        <div class="title-icon">
+          <h4>Program languages</h4>
+          <q-icon name="code" size="150px" class="section-icon" color="orange" />
+        </div>
+        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+
+        <section class="grid-skills">
+          <div v-for="(skill, index) in skills.languages" :key="index" class="skill">
+            <q-icon size="40px" :name="skill.icon" :color="skill.color"></q-icon>
+            <span class="title-skill">
+              {{ skill.name }}
+            </span>
+          </div>
+        </section>
+      </section>
+
+      <section class="skills-schem" style="background-color: rgba(0, 0, 50, 0.1)">
+        <div class="title-icon">
+          <h4>Frontend</h4>
+          <q-icon name="palette" size="150px" class="section-icon" color="blue" />
+        </div>
+        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+
+        <section class="grid-skills">
+          <div v-for="(skill, index) in skills.frontend" :key="index" class="skill">
+            <q-icon size="40px" :name="skill.icon" :color="skill.color"></q-icon>
+            <span class="title-skill">
+              {{ skill.name }}
+            </span>
+          </div>
+        </section>
+      </section>
+
+      <section class="skills-schem" style="background-color: rgba(100, 0, 100, 0.1)">
+        <div class="title-icon">
+          <h4>Backend</h4>
+          <q-icon name="dns" size="150px" class="section-icon" color="red" />
+        </div>
+        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+
+        <section class="grid-skills">
+          <div v-for="(skill, index) in skills.backend" :key="index" class="skill">
+            <q-icon size="40px" :name="skill.icon" :color="skill.color"></q-icon>
+            <span class="title-skill">
+              {{ skill.name }}
+            </span>
+          </div>
+        </section>
+      </section>
+
+      <section class="skills-schem" style="background-color: rgba(128, 128, 128, 0.1)">
+        <div class="title-icon">
+          <h4>DevOps</h4>
+          <q-icon name="build_circle" size="150px" class="section-icon" color="grey" />
+        </div>
+        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+
+        <section class="grid-skills">
+          <div v-for="(skill, index) in skills.devops" :key="index" class="skill">
+            <q-icon size="40px" :name="skill.icon" :color="skill.color"></q-icon>
+            <span class="title-skill">
+              {{ skill.name }}
+            </span>
+          </div>
+        </section>
+      </section>
+
+      <section class="skills-schem" style="background-color: rgba(0, 255, 255, 0.1)">
+        <div class="title-icon">
+          <h4>Cloud</h4>
+          <q-icon name="cloud" size="150px" class="section-icon" color="cyan" />
+        </div>
+        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+
+        <section class="grid-skills">
+          <div v-for="(skill, index) in skills.cloud" :key="index" class="skill">
+            <q-icon size="40px" :name="skill.icon" :color="skill.color"></q-icon>
+            <span class="title-skill">
+              {{ skill.name }}
+            </span>
+          </div>
+        </section>
+      </section>
+
+      <section class="skills-schem" style="background-color: rgba(0, 128, 0, 0.1)">
+        <div class="title-icon">
+          <h4>Good Practicess</h4>
+          <q-icon name="check_circle" size="150px" class="section-icon" color="green" />
+        </div>
+        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+
+        <section class="grid-skills">
+          <div v-for="(skill, index) in skills.goodPractice" :key="index" class="skill">
+            <q-icon size="40px" :name="skill.icon" :color="skill.color"></q-icon>
+            <span class="title-skill">
+              {{ skill.name }}
+            </span>
+          </div>
+        </section>
       </section>
     </section>
-    <section class="filosofy">
+    <section class="filosofy-grid">
       <h4 class="section-tittle">Mi filosofia y valores</h4>
       <section class="grid-valors">
-        <p>Aprendizage continuo</p>
-        <p>El esfuerzo y dedicacion no se negocia</p>
-        <p>Disfruto trabajando en equipo y compartir conociemientos</p>
-        <p>Codigo limpio y reutilizable</p>
-        <p>La perfeccion no existe, pero siemprre podemos acercarnos un poco mas</p>
-        <p>El respeto y la integracion es esencial</p>
+        <div class="filosofy">
+          <q-icon name="school" size="40px" />
+          <span class="title-skill">Aprendizaje continuo</span>
+        </div>
+
+        <div class="filosofy">
+          <q-icon name="bolt" size="40px" />
+          <span class="title-skill">Esfuerzo y dedicación</span>
+        </div>
+
+        <div class="filosofy">
+          <q-icon name="group" size="40px" />
+          <span class="title-skill">Trabajo en equipo</span>
+        </div>
+
+        <div class="filosofy">
+          <q-icon name="code" size="40px" />
+          <span class="title-skill">Código limpio y reutilizable</span>
+        </div>
+
+        <div class="filosofy">
+          <q-icon name="trending_up" size="40px" />
+          <span class="title-skill">Búsqueda de la mejora continua</span>
+        </div>
+
+        <div class="filosofy">
+          <q-icon name="diversity_3" size="40px" />
+          <span class="title-skill">Respeto e integración</span>
+        </div>
       </section>
     </section>
     <section class="timeline">
@@ -232,6 +348,75 @@ import { computed } from 'vue';
 
 //data
 const $q = useQuasar();
+type Skill = {
+  name: string;
+  icon: string;
+  color: string;
+};
+
+type SkillCategory = {
+  [category: string]: Skill[];
+};
+
+const skills: SkillCategory = {
+  languages: [
+    { name: 'JavaScript (ES6+)', icon: 'mdi-language-javascript', color: 'yellow-10' },
+    { name: 'HTML5', icon: 'mdi-language-html5', color: 'deep-orange-10' },
+    { name: 'CSS3', icon: 'mdi-language-css3', color: 'blue-10' },
+    { name: 'SQL (MariaDB / MySQL)', icon: 'mdi-database', color: 'indigo-10' },
+    { name: 'NoSQL (MongoDB)', icon: 'mdi-database-outline', color: 'green-10' },
+  ],
+
+  frontend: [
+    { name: 'Vue.js 2 i 3', icon: 'mdi-vuejs', color: 'light-green-10' },
+    { name: 'Vue Router', icon: 'mdi-router-wireless', color: 'cyan-10' },
+    { name: 'Pinia / Vuex', icon: 'mdi-database-sync', color: 'purple-8' },
+    { name: 'Quasar Framework', icon: 'mdi-star-circle', color: 'amber-7' },
+    { name: 'Composition API', icon: 'mdi-code-braces', color: 'blue-grey-7' },
+    { name: 'Responsive Design', icon: 'mdi-cellphone-link', color: 'pink-5' },
+    { name: 'Componentització', icon: 'mdi-view-grid-plus-outline', color: 'deep-purple-7' },
+    { name: 'Formularis validats', icon: 'mdi-form-select', color: 'teal-7' },
+    { name: 'Carrousels / Sliders / Steppers', icon: 'mdi-pan-horizontal', color: 'blue-7' },
+  ],
+
+  backend: [
+    { name: 'Node.js', icon: 'mdi-nodejs', color: 'green-10' },
+    { name: 'Express.js', icon: 'mdi-server', color: 'grey-8' },
+    { name: 'Autenticació amb JWT', icon: 'mdi-key', color: 'orange-10' },
+    { name: "Control d'usuaris i rols", icon: 'mdi-account-lock', color: 'red-9' },
+    { name: 'REST APIs', icon: 'mdi-api', color: 'deep-purple-10' },
+    { name: 'WebSockets / Socket.IO', icon: 'mdi-access-point-network', color: 'light-blue-10' },
+    { name: 'Pujada d’arxius', icon: 'mdi-file-upload-outline', color: 'amber-10' },
+  ],
+
+  devops: [
+    { name: 'Git', icon: 'mdi-git', color: 'red-10' },
+    { name: 'GitHub / Actions', icon: 'mdi-github', color: 'grey-10' },
+    { name: 'CI/CD', icon: 'mdi-rocket-launch', color: 'purple-10' },
+    { name: 'Docker', icon: 'mdi-docker', color: 'blue-10' },
+    { name: 'Docker Compose', icon: 'mdi-file-cog', color: 'indigo-7' },
+    { name: 'PM2', icon: 'mdi-cogs', color: 'brown-7' },
+    { name: 'Nginx', icon: 'mdi-server-network', color: 'blue-grey-8' },
+  ],
+
+  cloud: [
+    { name: 'AWS EC2', icon: 'mdi-aws', color: 'orange-8' },
+    { name: 'AWS S3', icon: 'mdi-aws', color: 'orange-8' },
+    { name: 'AWS RDS (MariaDB)', icon: 'mdi-database', color: 'indigo-10' },
+    { name: 'AWS ECS (Fargate)', icon: 'mdi-cloud-outline', color: 'light-blue-9' },
+    { name: 'Azure App Services', icon: 'mdi-microsoft-azure', color: 'blue-9' },
+    { name: 'Azure Static Web Apps', icon: 'mdi-microsoft-azure-devops', color: 'indigo-8' },
+  ],
+
+  goodPractice: [
+    { name: 'Clean Code', icon: 'mdi-code-tags-check', color: 'green-8' },
+    { name: 'Principis SOLID', icon: 'mdi-scale-balance', color: 'amber-9' },
+    { name: 'Testing (Unitari i Integració)', icon: 'mdi-vial', color: 'deep-orange-7' },
+    { name: 'Arquitectura MVC', icon: 'mdi-view-dashboard-outline', color: 'blue-grey-7' },
+    { name: 'Arquitectura microserveis (nivell mitjà)', icon: 'mdi-lan', color: 'cyan-9' },
+  ],
+};
+//computed
 const layout = computed(() => {
   return $q.screen.lt.sm ? 'dense' : $q.screen.lt.md ? 'comfortable' : 'loose';
 });
@@ -247,7 +432,6 @@ const layout = computed(() => {
 }
 .hellow {
   background-image: url('../assets/codeimage.jpg');
-
   background-size: cover;
 }
 .intro {
@@ -302,6 +486,9 @@ const layout = computed(() => {
 }
 .full-image {
   background-image: url('../assets/calpe-hight.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
   min-height: 400px;
   height: 100%;
   width: 100%;
@@ -330,6 +517,7 @@ const layout = computed(() => {
 }
 .section-tittle {
   padding: 3rem;
+  gap: 2rem;
   background-color: rgba(19, 118, 171, 0.435);
   text-align: center;
 }
@@ -344,13 +532,7 @@ const layout = computed(() => {
   border-radius: 50%;
   border: 8px solid rgb(37, 127, 191);
 }
-.grid-valors {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-  grid-auto-rows: minmax(350px, 1fr);
-  height: min-content;
-}
+
 .timeline {
   backdrop-filter: blur(20px);
   background-color: rgba(237, 240, 241, 0.996);
@@ -450,6 +632,83 @@ p {
   text-align: center;
   padding: 2rem;
 }
+
+/* skills */
+.skills {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(150, 136, 136, 0.316);
+  h4 {
+    color: white;
+    font-weight: bold;
+  }
+}
+.skills-schem {
+  display: grid;
+  grid-template-columns: 1.4fr 0.3fr 3fr;
+  grid-template-rows: 1fr;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: rgba(240, 248, 255, 0.096);
+}
+
+.grid-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.4rem;
+  place-items: center;
+}
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.418);
+  padding: 1rem;
+  background-color: rgba(14, 13, 13, 0.188);
+  border-radius: 15px;
+  width: 200px;
+  box-shadow: 0px 3px 9px rgba(213, 209, 209, 0.3);
+  height: 150px;
+  text-align: center;
+
+  color: white;
+  font-weight: bold;
+}
+.title-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* fylosofy */
+.filosofy-grid {
+  display: flex;
+  flex-direction: column;
+}
+.grid-valors {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(400px, 1fr);
+  height: min-content;
+}
+.filosofy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.418);
+  padding: 1rem;
+  background-color: rgba(14, 13, 13, 0.188);
+  box-shadow: 0px 3px 9px rgba(213, 209, 209, 0.3);
+  color: white;
+  font-weight: bold;
+}
 @media (max-width: 1200px) {
   .intro {
     display: grid;
@@ -459,7 +718,38 @@ p {
   }
   .where {
     grid-template-columns: 1fr;
-
+  }
+  .skills-schem {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content 1fr;
+  }
+  .grid-valors {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(300px, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .skill {
+    gap: 0.4rem;
+    background-color: transparent;
+    width: min-content;
+    box-shadow: none;
+    height: min-content;
+    color: white;
+    padding: 0rem;
+    border: none;
+  }
+  .grid-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    place-items: center;
+    white-space: nowrap;
+  }
+  .grid-valors {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(200px, 1fr);
   }
 }
 </style>
