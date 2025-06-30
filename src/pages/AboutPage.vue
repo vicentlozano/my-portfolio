@@ -35,7 +35,7 @@
               round
               color="white"
               icon="mdi-github"
-              href="https://github.com/tu-usuario"
+              href="https://github.com/vicentlozano"
               target="_blank"
             />
             <q-btn
@@ -43,7 +43,7 @@
               round
               color="pink"
               icon="mdi-instagram"
-              href="https://www.instagram.com/tu-usuario"
+              href="https://www.instagram.com/vicentlozano94"
               target="_blank"
             />
             <q-btn
@@ -51,7 +51,7 @@
               round
               color="blue"
               icon="mdi-facebook"
-              href="https://www.facebook.com/tu-usuario"
+              href="https://www.facebook.com/vicentlozano"
               target="_blank"
             />
             <q-btn flat round color="red" icon="mdi-gmail" href="mailto:tu-correo@gmail.com" />
@@ -317,14 +317,80 @@
       </div>
     </section>
     <section class="social">
-      <h2>Social y CV</h2>
+      <h4 class="section-tittle">Social y CV</h4>
       <section class="grid-valors">
-        <p>Github</p>
-        <p>Linkedin</p>
-        <p>Facebook</p>
-        <p>Instagram</p>
-        <p>Discord</p>
-        <p>Curriculum</p>
+        <div class="filosofy">
+          <q-btn
+            flat
+            round
+            color="grey-8"
+            icon="mdi-file-document"
+            href="../../public/filles/vicente-lozano-hervas-3-6-25.pdf"
+            target="_blank"
+            download
+          />
+          <span class="title-skill">Curriculum</span>
+        </div>
+        <div class="filosofy">
+          <q-btn
+            flat
+            round
+            size="20px"
+            color="white"
+            icon="mdi-github"
+            href="https://github.com/vicentlozano"
+            target="_blank"
+          />
+          <span class="title-skill">Github</span>
+        </div>
+        <div class="filosofy">
+          <q-btn
+            flat
+            round
+            size="20px"
+            color="blue-10"
+            icon="mdi-linkedin"
+            href="https://www.linkedin.com/in/vicent-lozano-hervas-9bb498187"
+            target="_blank"
+          />
+          <span class="title-skill">Linkedin</span>
+        </div>
+        <div class="filosofy">
+          <q-btn
+            flat
+            round
+            size="20px"
+            color="blue"
+            icon="mdi-facebook"
+            href="https://www.facebook.com/vicentlozano"
+            target="_blank"
+          />
+          <span class="title-skill">Facebook</span>
+        </div>
+        <div class="filosofy">
+          <q-btn
+            flat
+            round
+            size="20px"
+            color="pink"
+            icon="mdi-instagram"
+            href="https://www.instagram.com/vicentlozano94"
+            target="_blank"
+          />
+          <span class="title-skill">Instagram</span>
+        </div>
+        <div class="filosofy">
+          <q-btn
+            flat
+            round
+            size="20px"
+            color="purple-7"
+            icon="fab fa-discord"
+            href="https://discord.gg/u6UVmpnA"
+            target="_blank"
+          />
+          <span class="title-skill">Discord</span>
+        </div>
       </section>
     </section>
     <section :class="$q.screen.width > 900 ? 'portfolio' : 'mobile-portfolio'">
@@ -363,30 +429,37 @@ const skills: SkillCategory = {
     { name: 'JavaScript (ES6+)', icon: 'mdi-language-javascript', color: 'yellow-10' },
     { name: 'HTML5', icon: 'mdi-language-html5', color: 'deep-orange-10' },
     { name: 'CSS3', icon: 'mdi-language-css3', color: 'blue-10' },
-    { name: 'SQL (MariaDB / MySQL)', icon: 'mdi-database', color: 'indigo-10' },
-    { name: 'NoSQL (MongoDB)', icon: 'mdi-database-outline', color: 'green-10' },
+    { name: 'SQL', icon: 'mdi-database', color: 'yellow-10' },
+    { name: 'NoSQL', icon: 'mdi-database-outline', color: 'green-10' },
+    { name: 'Python', icon: 'mdi-language-python', color: 'blue-10' },
+    { name: 'Dart', icon: 'fab fa-dart-lang', color: 'blue-6' },
+    {
+      name: 'TypeScript',
+      icon: 'mdi-language-typescript',
+      color: 'blue-10',
+    },
   ],
 
   frontend: [
-    { name: 'Vue.js 2 i 3', icon: 'mdi-vuejs', color: 'light-green-10' },
+    { name: 'Vue.js 2 y 3', icon: 'mdi-vuejs', color: 'light-green-10' },
     { name: 'Vue Router', icon: 'mdi-router-wireless', color: 'cyan-10' },
     { name: 'Pinia / Vuex', icon: 'mdi-database-sync', color: 'purple-8' },
     { name: 'Quasar Framework', icon: 'mdi-star-circle', color: 'amber-7' },
     { name: 'Composition API', icon: 'mdi-code-braces', color: 'blue-grey-7' },
-    { name: 'Responsive Design', icon: 'mdi-cellphone-link', color: 'pink-5' },
-    { name: 'Componentització', icon: 'mdi-view-grid-plus-outline', color: 'deep-purple-7' },
-    { name: 'Formularis validats', icon: 'mdi-form-select', color: 'teal-7' },
-    { name: 'Carrousels / Sliders / Steppers', icon: 'mdi-pan-horizontal', color: 'blue-7' },
+    { name: 'Diseño responsivo', icon: 'mdi-cellphone-link', color: 'pink-5' },
+    { name: 'Componentización', icon: 'mdi-view-grid-plus-outline', color: 'deep-purple-7' },
+    { name: 'Idiomas (i18n)', icon: 'mdi-translate', color: 'purple-7' },
+    { name: 'Axios', icon: 'mdi-cloud-download-outline', color: 'blue-7' },
   ],
 
   backend: [
     { name: 'Node.js', icon: 'mdi-nodejs', color: 'green-10' },
     { name: 'Express.js', icon: 'mdi-server', color: 'grey-8' },
-    { name: 'Autenticació amb JWT', icon: 'mdi-key', color: 'orange-10' },
-    { name: "Control d'usuaris i rols", icon: 'mdi-account-lock', color: 'red-9' },
-    { name: 'REST APIs', icon: 'mdi-api', color: 'deep-purple-10' },
-    { name: 'WebSockets / Socket.IO', icon: 'mdi-access-point-network', color: 'light-blue-10' },
-    { name: 'Pujada d’arxius', icon: 'mdi-file-upload-outline', color: 'amber-10' },
+    { name: 'Autenticación con JWT', icon: 'mdi-key', color: 'orange-10' },
+    { name: 'Control de usuarios y roles', icon: 'mdi-account-lock', color: 'red-9' },
+    { name: 'APIs REST', icon: 'mdi-api', color: 'deep-purple-10' },
+    { name: 'WebSockets / MQTT', icon: 'mdi-access-point-network', color: 'light-blue-10' },
+    { name: 'Subida de archivos', icon: 'mdi-file-upload-outline', color: 'amber-10' },
   ],
 
   devops: [
@@ -402,20 +475,21 @@ const skills: SkillCategory = {
   cloud: [
     { name: 'AWS EC2', icon: 'mdi-aws', color: 'orange-8' },
     { name: 'AWS S3', icon: 'mdi-aws', color: 'orange-8' },
-    { name: 'AWS RDS (MariaDB)', icon: 'mdi-database', color: 'indigo-10' },
-    { name: 'AWS ECS (Fargate)', icon: 'mdi-cloud-outline', color: 'light-blue-9' },
+    { name: 'AWS RDS', icon: 'mdi-database', color: 'indigo-10' },
+    { name: 'AWS ECS', icon: 'mdi-cloud-outline', color: 'light-blue-9' },
     { name: 'Azure App Services', icon: 'mdi-microsoft-azure', color: 'blue-9' },
-    { name: 'Azure Static Web Apps', icon: 'mdi-microsoft-azure-devops', color: 'indigo-8' },
+    { name: 'Azure Static Web', icon: 'mdi-microsoft-azure-devops', color: 'indigo-8' },
   ],
 
   goodPractice: [
-    { name: 'Clean Code', icon: 'mdi-code-tags-check', color: 'green-8' },
-    { name: 'Principis SOLID', icon: 'mdi-scale-balance', color: 'amber-9' },
-    { name: 'Testing (Unitari i Integració)', icon: 'mdi-vial', color: 'deep-orange-7' },
+    { name: 'Código limpio', icon: 'mdi-code-tags-check', color: 'green-8' },
+    { name: 'Principios SOLID', icon: 'mdi-scale-balance', color: 'amber-9' },
+    { name: 'Testing', icon: 'fas fa-flask', color: 'deep-orange-7' },
     { name: 'Arquitectura MVC', icon: 'mdi-view-dashboard-outline', color: 'blue-grey-7' },
-    { name: 'Arquitectura microserveis (nivell mitjà)', icon: 'mdi-lan', color: 'cyan-9' },
+    { name: 'Microservicios', icon: 'mdi-lan', color: 'cyan-9' },
   ],
 };
+
 //computed
 const layout = computed(() => {
   return $q.screen.lt.sm ? 'dense' : $q.screen.lt.md ? 'comfortable' : 'loose';
@@ -709,6 +783,13 @@ p {
   color: white;
   font-weight: bold;
 }
+/* actions */
+.mobile-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 @media (max-width: 1200px) {
   .intro {
     display: grid;
@@ -732,12 +813,10 @@ p {
 @media (max-width: 500px) {
   .skill {
     gap: 0.4rem;
-    background-color: transparent;
-    width: min-content;
-    box-shadow: none;
-    height: min-content;
+    width: 150px;
+    height: 150px;
     color: white;
-    padding: 0rem;
+    padding: 1rem;
     border: none;
   }
   .grid-skills {
