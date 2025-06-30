@@ -209,7 +209,7 @@ onMounted(() => {
 }
 .typing-text {
   text-align: center;
-  font-size: 1em;
+  font-size: 1.5em;
   color: white;
   min-height: 3em;
   font-family: monospace;

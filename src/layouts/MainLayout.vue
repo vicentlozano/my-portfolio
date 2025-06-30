@@ -3,16 +3,13 @@
     <HeaderComponent class="header" />
     <router-view />
     <section class="footer" v-if="$q.screen.width > 800"></section>
-    <section v-else class="mini-header">
-      <div class="title">
-        <span class="rotul">&lt;</span>vilodev<span class="rotul">/&gt;</span>
-      </div>
-    </section>
+    <RouteBar v-else />
   </div>
 </template>
 
 <script setup lang="ts">
 import HeaderComponent from '../components/HeaderComponent.vue';
+import RouteBar from 'src/components/RouteBar.vue';
 import { useQuasar } from 'quasar';
 
 //data
@@ -34,20 +31,13 @@ const $q = useQuasar();
   );
   min-height: 100vh;
 }
-.rotul {
-  color: rgb(13, 116, 211);
-  font-weight: 800;
-}
-.title {
-  color: whitesmoke;
-  text-align: center;
-  font-weight: bold;
-  font-size: 2rem;
-}
+
 .header {
-    position: sticky;
-    top: 0;
-  z-index: 1;}
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 @media (max-width: 800px) {
   .grid {
     display: grid;
@@ -58,15 +48,6 @@ const $q = useQuasar();
     grid-row: 3;
     position: sticky;
     bottom: 0;
-    backdrop-filter: blur(20px);
-    background-color: rgba(7, 32, 52, 0.509);
-    z-index: 1;
-  }
-  .mini-header {
-    grid-row: 1;
-    min-height: 4rem;
-    position: sticky;
-    top: 0;
     backdrop-filter: blur(20px);
     background-color: rgba(7, 32, 52, 0.509);
     z-index: 1;
