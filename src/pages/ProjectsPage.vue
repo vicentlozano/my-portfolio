@@ -6,7 +6,7 @@
       filled
       placeholder="Search"
       bg-color="white"
-      style="padding: 0rem 2rem"
+      style="padding: 2rem 2rem 0rem 2rem"
     >
       <template v-slot:append>
         <q-icon name="info">
@@ -27,7 +27,7 @@
     </q-input>
     <section class="grid-projects">
       <div v-for="(project, index) in projectsFiltered" :key="index">
-        <ProjectsCard :project="project" />
+        <ProjectsCard :project="project" :finish="project.finish" />
       </div>
     </section>
   </div>
@@ -36,12 +36,14 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import codeimg from '../assets/codeimage.jpg';
-import calpe from '../assets/calpe-hight.png';
 import ProjectsCard from 'src/components/ProjectsCard.vue';
 type Project = {
   title: string;
+  subtitle: string;
   img: string[];
   url: string;
+  finish: boolean;
+  repository: string;
   platforms: platform[];
   technologies: technology[];
 };
@@ -59,50 +61,61 @@ const search = ref();
 const projects: Project[] = [
   {
     title: 'travels',
-    img: [codeimg, calpe],
-    url: 'https://travels.vilodev.com',
-    platforms: [
-      { name: 'android', url: 'https://travels.vilodev.com' },
-      { name: 'apple', url: 'https://travels.vilodev.com' },
-      { name: 'web', url: 'https://travels.vilodev.com' },
+    subtitle: 'Discover travels - Inspire people',
+    img: [
+      '../../public/projectsImg/travels/1.png',
+      '../../public/projectsImg/travels/2.png',
+      '../../public/projectsImg/travels/3.png',
+      '../../public/projectsImg/travels/4.png',
     ],
+    url: 'https://travels.vilodev.com',
+    finish: true,
+    repository: 'https://github.com/vicentlozano/travelsAppQuasar',
+    platforms: [{ name: 'web', url: 'https://travels.vilodev.com' }],
     technologies: [
-      { name: 'Vue.js', icon: 'mdi-vuejs' }, // MDI icon per a Vue.js (si existeix)
-      { name: 'Configuració', icon: 'mdi-cog' }, // MDI icon
-      { name: 'Casa', icon: 'home' }, // Material icon (sense prefix)
-      { name: 'Usuari', icon: 'account_circle' }, // Material icon
+      { name: 'Vue.js', icon: 'mdi-vuejs' },
+      { name: 'Node.js', icon: 'mdi-nodejs' },
+      { name: 'SQL', icon: 'mdi-database' },
+      { name: 'AWS', icon: 'mdi-aws' },
     ],
   },
   {
-    title: 'bingo',
-    img: [codeimg, calpe],
-    url: 'https://travels.vilodev.com',
-    platforms: [
-      { name: 'android', url: 'https://travels.vilodev.com' },
-      { name: 'apple', url: 'https://travels.vilodev.com' },
-      { name: 'web', url: 'https://travels.vilodev.com' },
+    title: 'bombo bingo',
+    subtitle: 'Tu bombo de bingo perfecto!',
+
+    img: [
+      '../../public/projectsImg/bingobombo/1.jpg',
+      '../../public/projectsImg/bingobombo/2.jpg',
+      '../../public/projectsImg/bingobombo/3.jpg',
     ],
+    url: 'https://travels.vilodev.com',
+    repository: 'https://github.com/vicentlozano/androiBingo',
+    finish: true,
+    platforms: [{ name: 'android', url: 'https://travels.vilodev.com' }],
     technologies: [
-      { name: 'Vue.js', icon: 'mdi-vuejs' }, // MDI icon per a Vue.js (si existeix)
-      { name: 'Configuració', icon: 'mdi-cog' }, // MDI icon
-      { name: 'Casa', icon: 'home' }, // Material icon (sense prefix)
-      { name: 'Usuari', icon: 'account_circle' }, // Material icon
+      { name: 'Kotlin', icon: 'mdi-language-kotlin' },
+      { name: 'Android Studio', icon: 'android' },
     ],
   },
   {
     title: 'pixaDuelo',
-    img: [codeimg, calpe],
+    subtitle: 'Comparte tus fotos y gana premios!',
+    img: [codeimg],
     url: 'https://travels.vilodev.com',
+    finish: false,
+    repository: 'https://github.com/vicentlozano/pixa_duelo',
+
     platforms: [
       { name: 'android', url: 'https://travels.vilodev.com' },
       { name: 'apple', url: 'https://travels.vilodev.com' },
       { name: 'web', url: 'https://travels.vilodev.com' },
     ],
     technologies: [
-      { name: 'Vue.js', icon: 'vue' },
-      { name: 'Vue.js', icon: 'mdi-cog' },
-      { name: 'Vue.js', icon: 'mdi-cog' },
-      { name: 'Vue.js', icon: 'mdi-cog' },
+      { name: 'Flutter', icon: 'fa-brands fa-flutter' },
+      { name: 'Dart', icon: 'fa-brands fa-dart-lang' },
+
+      { name: 'Python', icon: 'mdi-language-python' },
+      { name: 'Firabase', icon: 'mdi-fire' },
     ],
   },
 ];

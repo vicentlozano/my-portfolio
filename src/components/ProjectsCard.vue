@@ -9,7 +9,12 @@
           :img-src="img"
         >
           <div class="absolute-top text-subtitle1 text-center caption">
-            <a class="link" :href="project.url">{{ project.title.toUpperCase() }}</a>
+            <a class="link" :href="project.finish ? project.url : null"
+              >{{ project.title.toUpperCase() }}
+            </a>
+          </div>
+          <div v-if="!finish" class="absolute-center text-subtitle1 text-center text-white">
+            <h3>Working on ...</h3>
           </div>
           <div class="absolute-top-right info-icon">
             <q-icon name="info" size="30px" @click="actions = !actions">
@@ -29,12 +34,18 @@
       </q-carousel>
     </section>
     <section class="info" v-else>
-      <div class="absolute-top-left back-icon" style="padding: 1.7rem">
-        <q-btn round icon="mdi-arrow-left" color="grey-8" @click="actions = !actions" />
+      <div class="absolute-top-left back-icon">
+        <q-btn
+          :size="$q.screen.width < 450 ? '11px' : '15px'"
+          round
+          icon="mdi-arrow-left"
+          color="grey-8"
+          @click="actions = !actions"
+        />
       </div>
       <section class="title">
         {{ project.title.toUpperCase() }}
-        <span class="subtitle">Empieza a volar!</span>
+        <span class="subtitle">{{ project.subtitle }}</span>
       </section>
 
       <section class="details">
@@ -45,6 +56,7 @@
               v-for="platform in project.platforms"
               :key="platform"
               class="platform"
+              :disable="!finish"
               :icon="platform.name"
               :label="platform.name"
               stack
@@ -63,11 +75,7 @@
         <div class="acces-repository">
           <span class="title-tech" v-if="$q.screen.width > 700">REPOSITORIO</span>
           <div class="repository">
-            <a
-              href="https://github.com/vicentlozano/my-portfolio"
-              target="_blank"
-              class="github-link"
-            >
+            <a :href="project.repository" target="_blank" class="github-link">
               <q-icon name="mdi-github" :size="$q.screen.width > 700 ? '60px' : '30px'"></q-icon>
               🔗 Veure el repositori de GitHub
             </a>
@@ -96,10 +104,14 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  finish: {
+    type: Boolean,
+    required: true,
+  },
 });
 //data
 const $q = useQuasar();
-const slide = ref(1);
+const slide = ref(0);
 const actions = ref(false);
 const platformColors: { android: string; ios: string; web: string } = {
   android: '#388e3c',
@@ -132,6 +144,7 @@ const platformColors: { android: string; ios: string; web: string } = {
   backdrop-filter: blur(1px);
   background-color: rgba(0, 0, 0, 0.3);
 }
+
 .link {
   text-decoration: none;
   color: whitesmoke;
@@ -158,10 +171,6 @@ const platformColors: { android: string; ios: string; web: string } = {
 }
 .back-icon {
   padding: 1rem;
-  color: white;
-  font-size: 1.3em;
-  font-weight: bold;
-  letter-spacing: 1.4px;
   cursor: pointer;
 }
 
@@ -277,7 +286,7 @@ const platformColors: { android: string; ios: string; web: string } = {
   border: none;
   border-radius: 0px;
 }
-.tech{
+.tech {
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -306,6 +315,11 @@ const platformColors: { android: string; ios: string; web: string } = {
     place-content: center;
     gap: 2rem;
     width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .back-icon {
+    padding-top: 1.3rem ;
   }
 }
 </style>
