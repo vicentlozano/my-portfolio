@@ -83,6 +83,8 @@ const layout = computed(() => {
 .timeline {
   background-color: rgba(20, 20, 20, 0.477);
   color: white;
+  height: 100%;
+  padding-top: 2rem;
 }
 .mobile-portfolio {
   display: grid;
@@ -131,10 +133,14 @@ const layout = computed(() => {
   transition: all 0.4s ease;
 }
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
+  display: grid;
+  grid-template-rows: 1fr min-content;
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+@media (max-width: 550px) {
+  .timeline {
+    padding-top: 1rem;
+  }
 }
 </style>
