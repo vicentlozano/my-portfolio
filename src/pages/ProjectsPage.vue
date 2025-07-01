@@ -1,8 +1,32 @@
 <template>
   <div class="principal-grid">
-    <FilterComponent />
+    <q-input
+      v-model="search"
+      debounce="500"
+      filled
+      placeholder="Search"
+      bg-color="white"
+      style="padding: 0rem 2rem"
+    >
+      <template v-slot:append>
+        <q-icon name="info">
+          <q-tooltip
+            class="bg-indigo"
+            transition-show="flip-right"
+            transition-hide="flip-left"
+            anchor="bottom middle"
+            self="bottom middle"
+            :offset="[40, 40]"
+          >
+            <strong>Puedes buscar por nombre de proyecto o por tecnología</strong>
+          </q-tooltip>
+        </q-icon>
+
+        <q-icon name="search" />
+      </template>
+    </q-input>
     <section class="grid-projects">
-      <div v-for="(project, index) in projects" :key="index">
+      <div v-for="(project, index) in projectsFiltered" :key="index">
         <ProjectsCard :project="project" />
       </div>
     </section>
@@ -10,40 +34,87 @@
 </template>
 
 <script setup lang="ts">
-import codeimg from '../assets/codeimage.jpg'
-import calpe from '../assets/calpe-hight.png'
+import { computed, ref } from 'vue';
+import codeimg from '../assets/codeimage.jpg';
+import calpe from '../assets/calpe-hight.png';
+import ProjectsCard from 'src/components/ProjectsCard.vue';
 type Project = {
   title: string;
   img: string[];
   url: string;
+  platforms: platform[];
   technologies: technology[];
 };
 type technology = {
   name: string;
   icon: string;
 };
+type platform = {
+  name: string;
+  url: string;
+};
+
+//data
+const search = ref();
 const projects: Project[] = [
   {
     title: 'travels',
-    img: [codeimg,calpe],
+    img: [codeimg, calpe],
     url: 'https://travels.vilodev.com',
-    technologies: [{ name: 'Vue.js', icon: 'mdi-cog' },{ name: 'Vue.js', icon: 'mdi-cog' },{ name: 'Vue.js', icon: 'mdi-cog' },{ name: 'Vue.js', icon: 'mdi-cog' },],
+    platforms: [
+      { name: 'android', url: 'https://travels.vilodev.com' },
+      { name: 'apple', url: 'https://travels.vilodev.com' },
+      { name: 'web', url: 'https://travels.vilodev.com' },
+    ],
+    technologies: [
+      { name: 'Vue.js', icon: 'mdi-vuejs' }, // MDI icon per a Vue.js (si existeix)
+      { name: 'Configuració', icon: 'mdi-cog' }, // MDI icon
+      { name: 'Casa', icon: 'home' }, // Material icon (sense prefix)
+      { name: 'Usuari', icon: 'account_circle' }, // Material icon
+    ],
   },
   {
     title: 'bingo',
-    img: [codeimg,calpe],
+    img: [codeimg, calpe],
     url: 'https://travels.vilodev.com',
-    technologies: [{ name: 'Vue.js', icon: 'mdi-cog' },{ name: 'Vue.js', icon: 'mdi-cog' },{ name: 'Vue.js', icon: 'mdi-cog' },{ name: 'Vue.js', icon: 'mdi-cog' },],
+    platforms: [
+      { name: 'android', url: 'https://travels.vilodev.com' },
+      { name: 'apple', url: 'https://travels.vilodev.com' },
+      { name: 'web', url: 'https://travels.vilodev.com' },
+    ],
+    technologies: [
+      { name: 'Vue.js', icon: 'mdi-vuejs' }, // MDI icon per a Vue.js (si existeix)
+      { name: 'Configuració', icon: 'mdi-cog' }, // MDI icon
+      { name: 'Casa', icon: 'home' }, // Material icon (sense prefix)
+      { name: 'Usuari', icon: 'account_circle' }, // Material icon
+    ],
   },
   {
     title: 'pixaDuelo',
-    img: [codeimg,calpe],
+    img: [codeimg, calpe],
     url: 'https://travels.vilodev.com',
-    technologies: [{ name: 'Vue.js', icon: 'mdi-cog' },{ name: 'Vue.js', icon: 'mdi-cog' },{ name: 'Vue.js', icon: 'mdi-cog' },{ name: 'Vue.js', icon: 'mdi-cog' },],
+    platforms: [
+      { name: 'android', url: 'https://travels.vilodev.com' },
+      { name: 'apple', url: 'https://travels.vilodev.com' },
+      { name: 'web', url: 'https://travels.vilodev.com' },
+    ],
+    technologies: [
+      { name: 'Vue.js', icon: 'vue' },
+      { name: 'Vue.js', icon: 'mdi-cog' },
+      { name: 'Vue.js', icon: 'mdi-cog' },
+      { name: 'Vue.js', icon: 'mdi-cog' },
+    ],
   },
 ];
-import FilterComponent from 'src/components/FilterComponent.vue';
-import ProjectsCard from 'src/components/ProjectsCard.vue';
+const projectsFiltered = computed(() => {
+  const s = search.value?.trim().toLowerCase() || '';
+  if (!s) return projects; // si no hi ha cerca, torna tots
+  return projects.filter(
+    (project) =>
+      project.title.toLowerCase().includes(s) ||
+      project.technologies.some((tech) => tech.name.toLowerCase().includes(s)),
+  );
+});
 </script>
 
 <style scoped>
@@ -53,16 +124,14 @@ import ProjectsCard from 'src/components/ProjectsCard.vue';
   padding: 2rem;
   gap: 2rem;
 }
-@media(min-width:1201px) and (max-width:2000px){
-    .grid-projects {
-  grid-template-columns: 1fr 1fr ;
- 
+@media (min-width: 1201px) and (max-width: 2000px) {
+  .grid-projects {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-}
-@media(max-width:1200px){
-    .grid-projects {
-  grid-template-columns: 1fr ;
- 
-}
+@media (max-width: 1200px) {
+  .grid-projects {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
