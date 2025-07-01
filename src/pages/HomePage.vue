@@ -8,7 +8,14 @@
         </section>
       </article>
       <div class="next">
-        <q-btn class="button-scroll" flat round color="white" icon="mdi-arrow-down" @click="scrollBottom"></q-btn>
+        <q-btn
+          class="button-scroll"
+          flat
+          round
+          color="white"
+          icon="mdi-arrow-down"
+          @click="scrollBottom"
+        ></q-btn>
       </div>
       <!-- <q-avatar class="custom-avatar" size="250px">
         <img src="../assets/yop.JPG" class="yop" />
@@ -50,7 +57,7 @@ let isDeleting = false;
 const scrollBottom = () => {
   window.scrollTo({
     top: document.body.scrollHeight,
-    behavior: 'smooth'  // para un scroll suave
+    behavior: 'smooth', // para un scroll suave
   });
 };
 const typeEffect = () => {
@@ -219,11 +226,12 @@ onMounted(() => {
 }
 
 @keyframes fade-opacity {
-  0%, 100% {
-    opacity: 1;     /* totalmente visible */
+  0%,
+  100% {
+    opacity: 1; /* totalmente visible */
   }
   50% {
-    opacity: 0.0;   /* semitransparente */
+    opacity: 0; /* semitransparente */
   }
 }
 @keyframes blinkCursor {
@@ -231,19 +239,26 @@ onMounted(() => {
     border-color: transparent;
   }
 }
-@media(max-width: 800px){
+@media (max-width: 800px) {
   .presentation {
-  padding: 1rem;
-  height: calc(100vh - 8rem);
-
-}}
-@media(min-width: 1400px){
- .typing-text {
-  font-size: 2.8em;
-  color: white;
-  min-height: 3em;
-  font-family: monospace;
+    padding: 1rem;
+    height: calc(100vh - 8rem);
+  }
 }
+@media (min-width: 1400px) {
+  .typing-text {
+    font-size: 2.8em;
+    color: white;
+    min-height: 3em;
+    font-family: monospace;
+  }
 }
-
+@media (max-width: 450px) {
+  .typing-text {
+    font-size: 1.2em;
+    color: white;
+    min-height: 3em;
+    font-family: monospace;
+  }
+}
 </style>
