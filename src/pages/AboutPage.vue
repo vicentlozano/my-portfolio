@@ -255,13 +255,12 @@
 
           <q-timeline-entry
             title="Creación de proyectos propios"
-            subtitle="Abril 2025"
+            subtitle="Junio 2025"
             side="right"
             icon="code"
           >
             <div>
-              Desarrollo proyectos personales con Vue, Quasar y Node.js per posar en pràctica els
-              meus coneixements i demostrar la meua iniciativa.
+             Desarrollo proyectos personales con Vue, Quasar y Node.js para poner en práctica mis conocimientos y demostrar mi iniciativa.
             </div>
           </q-timeline-entry>
 
