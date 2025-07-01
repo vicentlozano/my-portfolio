@@ -236,6 +236,13 @@ onMounted(() => {
   padding: 1rem;
   height: calc(100vh - 8rem);
 
+}}
+@media(min-width: 1400px){
+ .typing-text {
+  font-size: 2.8em;
+  color: white;
+  min-height: 3em;
+  font-family: monospace;
 }
 }
 
