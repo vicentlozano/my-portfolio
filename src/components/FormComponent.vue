@@ -50,7 +50,7 @@
       label-color="black"
       label="Message"
       type="textarea"
-      :rows="8"
+      :rows="5"
       :rules="[requiredRule]"
     >
       <template v-slot:append>
