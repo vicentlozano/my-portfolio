@@ -1,12 +1,16 @@
 <template>
   <div class="project">
     <section class="carrusel" v-if="!actions">
-      <q-carousel swipeable animated v-model="slide" thumbnails infinite>
+      <q-carousel swipeable animated v-model="slide" thumbnails infinite     class="carousel-bg">
+        <q-inner-loading :showing="loadingImages">
+          <q-spinner color="primary" size="50px" />
+        </q-inner-loading>
         <q-carousel-slide
           v-for="(img, index) in props.project.img"
           :key="img + index"
           :name="index"
           :img-src="img"
+          @img-loaded="index === 0 && onImgLoad()"
         >
           <div class="absolute-top text-subtitle1 text-center caption">
             <a class="link" :href="project.finish ? project.url : null"
@@ -113,11 +117,17 @@ const props = defineProps({
 const $q = useQuasar();
 const slide = ref(0);
 const actions = ref(false);
+const loadingImages = ref(true);
 const platformColors: { android: string; ios: string; web: string } = {
   android: '#388e3c',
   ios: '#424242',
   web: '#3949ab',
 };
+
+//methods
+function onImgLoad() {
+  loadingImages.value = false;
+}
 </script>
 
 <style scoped>
@@ -133,7 +143,11 @@ const platformColors: { android: string; ios: string; web: string } = {
   border-radius: 15px;
   box-shadow: 0px 3px 9px rgba(213, 209, 209, 0.3);
 }
-
+.carrusel,
+.carousel-bg {
+  background: #181818 !important;
+  min-height: 400px;
+}
 .caption {
   width: 100%;
   padding: 1rem;
@@ -319,7 +333,7 @@ const platformColors: { android: string; ios: string; web: string } = {
 }
 @media (max-width: 450px) {
   .back-icon {
-    padding-top: 1.3rem ;
+    padding-top: 1.3rem;
   }
 }
 </style>

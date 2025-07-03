@@ -1,9 +1,11 @@
 <template>
   <div class="principal">
     <section class="talk">
-      <h2 class="title" :style="$q.screen.width<500? 'margin-top:15px' : ''">Hablemos!</h2>
-      <span class="subtitle">Estoy disponible para colaboraciones o simplemente charlar.</span>
-
+      <h2 class="title" :style="$q.screen.width < 500 ? 'margin-top:15px' : ''">¿Hablamos?</h2>
+      <span class="subtitle">
+        Estoy siempre abierto a nuevas ideas, proyectos y desafíos.<br />
+        Si quieres construir algo juntos o simplemente charlar, ¡escríbeme!
+      </span>
       <div class="contact-info">
         <div class="info-item">
           <q-icon name="mdi-account" class="icon" color="blue-6" />
@@ -36,7 +38,7 @@
           <q-icon name="mdi-map" color="blue" size="40px"></q-icon>
           <span class="title-info">Estoy aqui</span>
         </div>
-        <div style="padding: 1rem; height: 100%; width: 100%;">
+        <div style="padding: 1rem; height: 100%; width: 100%">
           <div
             id="map"
             style="width: 100%; height: 100%; border-radius: 15px"
@@ -46,7 +48,7 @@
       </section>
       <q-separator
         color="blue-3"
-        :vertical="$q.screen.width > 950"
+        v-if="$q.screen.width < 950"
         :style="$q.screen.width < 950 ? 'width: 100%' : ''"
       />
       <section class="contact">
@@ -60,8 +62,64 @@
       </section>
     </section>
     <q-separator color="blue-3"></q-separator>
-    <section class="socil">HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</section>
+
+    <section class="links-social">
+      <q-btn
+        flat
+        round
+        :size="$q.screen.width < 500 ? '14px' : '20px'"
+        color="blue-10"
+        icon="mdi-linkedin"
+        href="https://www.linkedin.com/in/vicent-lozano-hervas-9bb498187"
+        target="_blank"
+      />
+      <q-btn
+        flat
+        round
+        :size="$q.screen.width < 500 ? '14px' : '20px'"
+        color="white"
+        icon="mdi-github"
+        href="https://github.com/vicentlozano"
+        target="_blank"
+      />
+      <q-btn
+        flat
+        round
+        :size="$q.screen.width < 500 ? '14px' : '20px'"
+        color="pink"
+        icon="mdi-instagram"
+        href="https://www.instagram.com/vicentlozano94"
+        target="_blank"
+      />
+      <q-btn
+        flat
+        round
+        :size="$q.screen.width < 500 ? '10px' : '20px'"
+        color="blue"
+        icon="mdi-facebook"
+        href="https://www.facebook.com/vicentlozano"
+        target="_blank"
+      />
+      <q-btn
+        flat
+        round
+        :size="$q.screen.width < 500 ? '14px' : '20px'"
+        color="red"
+        icon="mdi-gmail"
+        href="mailto:tu-correo@gmail.com"
+      />
+      <q-btn
+        flat
+        round
+        :size="$q.screen.width < 500 ? '14px' : '20px'"
+        color="green"
+        icon="mdi-whatsapp"
+        href="https://wa.me/34694501662"
+        target="_blank"
+      />
+    </section>
   </div>
+  
 </template>
 
 <script setup lang="ts">
@@ -71,16 +129,16 @@ import { onMounted } from 'vue';
 const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API;
 
 function safeInitMap() {
-  // Espera hasta que window.google.maps.Map esté disponible
-
+  const mapDiv = document.getElementById('map');
   if (
-    // @ts-expect-error-des
+    mapDiv &&
+      // @ts-expect-error-des
 
     window.google &&
-    // @ts-expect-error-des
+      // @ts-expect-error-des
 
     window.google.maps &&
-    // @ts-expect-error-des
+      // @ts-expect-error-des
 
     typeof window.google.maps.Map === 'function'
   ) {
@@ -149,7 +207,6 @@ const initMap = () => {
   }
 };
 
-
 onMounted(() => {
   if (!document.getElementById('google-maps-script')) {
     const script = document.createElement('script');
@@ -168,7 +225,7 @@ onMounted(() => {
 <style scoped>
 .principal {
   display: grid;
-  grid-template-rows:min-content min-content 1fr;
+  grid-template-rows: min-content min-content 1fr;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.463);
@@ -193,7 +250,9 @@ onMounted(() => {
   letter-spacing: 2px;
 }
 .subtitle {
-  color: rgb(188, 182, 182);
+  color: rgb(215, 210, 210);
+  font-weight: 500;
+  padding: 0.3rem;
 }
 
 .info-item {
@@ -250,7 +309,7 @@ onMounted(() => {
 
 .grid-contact {
   display: grid;
-  grid-template-columns: 1fr min-content 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
   gap: 2rem;
   height: 100%;
@@ -263,6 +322,15 @@ onMounted(() => {
   flex-direction: column;
   width: 100%;
   height: 100%;
+}
+
+.links-social {
+  display: flex;
+  width: 100%;
+  align-self: end;
+  place-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.338);
 }
 @media (min-width: 501px) and (max-width: 950px) {
   .grid-contact {
@@ -330,6 +398,12 @@ onMounted(() => {
   .icon {
     align-self: center;
     justify-self: center;
+  }
+  .title {
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 2px;
   }
 }
 </style>
