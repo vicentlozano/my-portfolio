@@ -105,4 +105,5 @@ export default {
   travelsDesc: 'Descrube lugares - Inspira a las personas' ,
   bingoDesc: 'Tu bombo de bingo perfecto!',
   pixaDueloDesc: 'Comparte tus fotos y gana premios!',
+  myExperience: 'Mi experiencia laboral'
 };
