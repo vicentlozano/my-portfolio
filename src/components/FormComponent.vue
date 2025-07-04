@@ -5,7 +5,7 @@
       bg-color="blue-1"
       v-model="form.name"
       label-color="black"
-      label="Name"
+      :label="t('name')"
       dense
       :rules="[requiredRule]"
     >
@@ -19,7 +19,7 @@
       bg-color="blue-1"
       v-model="form.email"
       label-color="black"
-      label="Email"
+      :label="t('email')"
       type="email"
       dense
       :rules="[requiredRule, emailRule]"
@@ -34,7 +34,7 @@
       bg-color="blue-1"
       v-model="form.subject"
       label-color="black"
-      label="Subject"
+      :label="t('subject')"
       dense
       :rules="[requiredRule]"
     >
@@ -48,7 +48,7 @@
       bg-color="blue-1"
       v-model="form.message"
       label-color="black"
-      label="Message"
+      :label="t('message')"
       type="textarea"
       :rows="5"
       :rules="[requiredRule]"
@@ -58,7 +58,7 @@
       </template>
     </q-input>
 
-    <q-btn label="Enviar" color="primary" type="submit" class="btn-form" />
+    <q-btn :label="t('send')" color="primary" type="submit" class="btn-form" />
   </q-form>
 </template>
 
@@ -66,9 +66,12 @@
 import { ref, nextTick } from 'vue';
 import { useQuasar } from 'quasar';
 import type { QForm } from 'quasar';
+import { useI18n } from 'vue-i18n';
+
 
 import emailjs from 'emailjs-com';
-
+//data
+const { t } = useI18n();
 const $q = useQuasar();
 const formRef = ref<QForm | null>(null);
 
@@ -130,3 +133,14 @@ const submitForm = async () => {
   }
 };
 </script>
+<style scoped>
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+.btn-form{
+  align-self: center;
+  width: 200px;
+}
+</style>

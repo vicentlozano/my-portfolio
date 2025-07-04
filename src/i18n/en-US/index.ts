@@ -105,4 +105,18 @@ export default {
   travelsDesc: 'Discover places - Inspire people',
   bingoDesc: 'Your perfect bingo drum!',
   pixaDueloDesc: 'Share your photos and win prizes!',
+  myExperience: 'My work experience',
+  contactSubtitle1: 'I’m always open to new ideas, projects, and challenges.',
+  contactSubtitle2:
+    'If you want to build something together or just have a chat, feel free to reach out!',
+  imHere: 'I’m here',
+  sendEmail: 'Send me an email!',
+  send: 'Send',
+  message: 'Message',
+  name: 'Name',
+  email: 'Email',
+  subject: 'Subject',
+  myLocation: 'My location',
+  getDirections: 'Get directions',
+  soon: 'Coming soon',
 };

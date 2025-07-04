@@ -1,14 +1,19 @@
 <template>
   <div class="no-yet">
- <h4 class="comment">
-      Próximamente
+    <h4 class="comment">
+      {{ t('soon') }}
       <span class="dot">.</span>
       <span class="dot">.</span>
       <span class="dot">.</span>
-    </h4>  </div>
+    </h4>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+///data
+const { t } = useI18n();
+</script>
 
 <style scoped>
 .no-yet {
@@ -37,7 +42,13 @@
 }
 
 @keyframes blink {
-  0%, 20% { opacity: 0; }
-  50%, 100% { opacity: 1; }
+  0%,
+  20% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
 }
 </style>
