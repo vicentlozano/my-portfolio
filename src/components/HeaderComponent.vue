@@ -5,13 +5,14 @@
     </section>
     <section class="routes">
       <router-link to="/" :class="route.path === '/' ? 'custom-link on-route' : 'custom-link'">
-        <q-icon class="pre-icon" name="mdi-home" /> <span v-if="$q.screen.width > 1200">Home</span>
+        <q-icon class="pre-icon" name="mdi-home" />
+        <span v-if="$q.screen.width > 1200"> {{ t('home') }} </span>
         <q-tooltip
           v-if="$q.screen.width > 800 && $q.screen.width < 1200"
           transition-show="flip-right"
           transition-hide="flip-left"
         >
-          Home
+          {{ t('home') }}
         </q-tooltip>
       </router-link>
 
@@ -20,13 +21,13 @@
         :class="route.path === '/aboutme' ? 'custom-link on-route' : 'custom-link'"
       >
         <q-icon class="pre-icon" name="mdi-account" />
-        <span v-if="$q.screen.width > 1200">About Me</span>
+        <span v-if="$q.screen.width > 1200">{{ t('aboutme') }}</span>
         <q-tooltip
           v-if="$q.screen.width > 800 && $q.screen.width < 1200"
           transition-show="flip-right"
           transition-hide="flip-left"
         >
-          About Me
+          {{ t('aboutme') }}
         </q-tooltip>
       </router-link>
 
@@ -35,29 +36,28 @@
         :class="route.path === '/projects' ? 'custom-link on-route' : 'custom-link'"
       >
         <q-icon class="pre-icon" name="mdi-folder-outline" />
-        <span v-if="$q.screen.width > 1200">Projects</span>
+        <span v-if="$q.screen.width > 1200">{{ t('projects') }}</span>
         <q-tooltip
           v-if="$q.screen.width > 800 && $q.screen.width < 1200"
           transition-show="flip-right"
           transition-hide="flip-left"
         >
-          Projects
+          {{ t('projects') }}
         </q-tooltip>
       </router-link>
-
 
       <router-link
         to="/experience"
         :class="route.path === '/experience' ? 'custom-link on-route' : 'custom-link'"
       >
         <q-icon class="pre-icon" name="mdi-briefcase-outline" />
-        <span v-if="$q.screen.width > 1200">Experience</span>
+        <span v-if="$q.screen.width > 1200"> {{ t('experience') }} </span>
         <q-tooltip
           v-if="$q.screen.width > 800 && $q.screen.width < 1200"
           transition-show="flip-right"
           transition-hide="flip-left"
         >
-          Experience
+          {{ t('experience') }}
         </q-tooltip>
       </router-link>
 
@@ -66,13 +66,13 @@
         :class="route.path === '/contact' ? 'custom-link on-route' : 'custom-link'"
       >
         <q-icon class="pre-icon" name="mdi-email-outline" />
-        <span v-if="$q.screen.width > 1200">Contact</span>
+        <span v-if="$q.screen.width > 1200"> {{ t('contact') }} </span>
         <q-tooltip
           v-if="$q.screen.width > 800 && $q.screen.width < 1200"
           transition-show="flip-right"
           transition-hide="flip-left"
         >
-          Contact
+          {{ t('contact') }}
         </q-tooltip>
       </router-link>
 
@@ -81,23 +81,39 @@
         :class="route.path === '/blog' ? 'custom-link on-route' : 'custom-link'"
       >
         <q-icon class="pre-icon" name="mdi-notebook-outline" />
-        <span v-if="$q.screen.width > 1200">Blog</span>
+        <span v-if="$q.screen.width > 1200"> {{ t('blog') }} </span>
         <q-tooltip
           v-if="$q.screen.width > 800 && $q.screen.width < 1200"
           transition-show="flip-right"
           transition-hide="flip-left"
         >
-          Blog
+          {{ t('blog') }}
         </q-tooltip>
       </router-link>
     </section>
 
     <section class="actions" v-if="$q.screen.width > 800">
-      <q-btn flat round color="primary" icon="mdi-cog"
-        ><q-tooltip transition-show="flip-right" transition-hide="flip-left">
-          Configuration
-        </q-tooltip></q-btn
-      >
+      <q-btn flat round color="primary" icon="mdi-translate" aria-label="Idioma">
+        <q-menu
+          anchor="bottom middle"
+          self="top middle"
+          :offset="[0, 25]"
+          style="background-color: transparent"
+        >
+          <q-list class="center-flags" style="padding: 0">
+            <q-item clickable v-close-popup @click="setLang('es-ES')" style="padding: 4px">
+              <q-item-section avatar style="width: auto; padding: 0">
+                <img src="/flags/es.svg" class="flag" />
+              </q-item-section>
+            </q-item>
+            <q-item clickable v-close-popup @click="setLang('en-US')" style="padding: 4px">
+              <q-item-section avatar style="width: auto; padding: 0">
+                <img src="/flags/en.svg" class="flag" />
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-menu>
+      </q-btn>
     </section>
   </div>
 </template>
@@ -105,10 +121,25 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { useQuasar } from 'quasar';
+import { useI18n } from 'vue-i18n';
+const { locale } = useI18n();
+import { ref, watch } from 'vue';
 
 //data
+const { t } = useI18n();
+
+const lang = ref(locale.value);
 const $q = useQuasar();
 const route = useRoute();
+//methods
+const setLang = (l: string) => {
+  lang.value = l;
+  locale.value = l;
+};
+// computed&watchs
+watch(lang, (val) => {
+  locale.value = val;
+});
 </script>
 
 <style scoped>
@@ -162,6 +193,19 @@ const route = useRoute();
 .rotul {
   color: rgb(13, 116, 211);
   font-weight: 800;
+}
+.center-flags {
+  background-color: rgba(20, 31, 45, 0.662);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  place-content: center;
+  height: 100px;
+  width: 65px;
+}
+.flag {
+  padding: 0.5rem;
+  height: 100%;
+  width: 100%;
 }
 @media (max-width: 800px) {
   .header {

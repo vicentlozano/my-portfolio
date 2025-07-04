@@ -1,0 +1,108 @@
+// This is just an example,
+// so you can safely delete all default props below
+
+export default {
+  failed: 'Action failed',
+  success: 'Action was successful',
+  home: 'Inicio',
+  aboutme: 'Sobre mi',
+  projects: 'Proyectos',
+  experience: 'Experiencia',
+  contact: 'Contacto',
+  blog: 'Blog',
+  hello: 'Hola',
+  helowText: '¡Bienvenidos a Vilodev!',
+  im: 'Soy Vicent Lozano',
+  developer: 'Desarrollador full-stack web, Android e iOS',
+  skillsMessage: 'Especializado en Javascript, Vue.js, Quasar, Node.js y Flutter',
+  seeProjects: '¿QUIERES VER TODOS MIS PROYECTOS?',
+  myProjects: 'MIS PROYECTOS',
+  knowMe: 'CONÓCEME MEJOR',
+  heyMyName: 'HOLA, MI NOMBRE ES',
+  textDes:
+    ' Desarrollo aplicaciones web y móviles de principio a fin, combinando un frontend cuidado con backends funcionales.',
+  findMe: 'ENCUENTRAME',
+  origin: 'Mis origenes',
+  fromCalpe: 'Desde Calpe programando con ',
+  year31:
+    ' Tengo 31 años, soy padre y actualmente resido en Calpe, mi pequeño paraíso. Nací en Alginet y desde pequeño me ha apasionado la tecnología y el poder de crear cosas desde cero.',
+  grow: 'Tras años de esfuerzo, he retomado mis estudios y completado el ciclo de Desarrollo de Aplicaciones Web. Hoy, me siento preparado para nuevos retos, con una base técnica sólida y muchas ganas de seguir creciendo.',
+  mySkills: 'Mis habilidades y conocimientos',
+  progLang: 'Lenguages de programación',
+  goodPrac: 'Buenas prácicas',
+  myFilosofy: 'Mi filosofia y valores',
+  continuousLearning: 'Aprendizaje continuo',
+  effortAndDedication: 'Esfuerzo y dedicación',
+  teamwork: 'Trabajo en equipo',
+  cleanAndReusableCode: 'Código limpio y reutilizable',
+  continuousImprovement: 'Búsqueda de la mejora continua',
+  respectAndInclusion: 'Respeto e integración',
+  lastSteps: 'Mis últimos pasos',
+  talk: '¿HABLAMOS?',
+  discoverProjects: 'DESCUBRE MIS PROYECTOS',
+  and: 'y',
+  dawStartTitle: 'Inicio del ciclo DAW',
+  dawStartSubtitle: 'Septiembre 2023',
+  dawStartDesc:
+    'Decido comenzar el ciclo formativo de Desarrollo de Aplicaciones Web para dedicarme profesionalmente al desarrollo.',
+
+  dualTrainingTitle: 'Formación Dual en AUTIS Ingenieros',
+  dualTrainingSubtitle: 'Mayo 2024',
+  dualTrainingDesc:
+    'Inicio mi formación dual en AUTIS Ingenieros, combinando clases con experiencia en empresa en un entorno profesional real.',
+
+  internTitle: 'Becario en AUTIS Ingenieros',
+  internSubtitle: 'Marzo 2025',
+  internDesc:
+    'Me incorporo como becario, aportando valor real a proyectos internos y consolidando mis conocimientos en entornos productivos.',
+
+  ownProjectsTitle: 'Creación de proyectos propios',
+  ownProjectsSubtitle: 'Junio 2025',
+  ownProjectsDesc:
+    'Desarrollo proyectos personales con Vue, Quasar y Node.js para poner en práctica mis conocimientos y demostrar mi iniciativa.',
+
+  dawEndTitle: 'Finalización del ciclo DAW',
+  dawEndSubtitle: 'Junio 2025',
+  dawEndDesc:
+    'Obtengo el título de Técnico Superior en Desarrollo de Aplicaciones Web, con experiencia práctica en empresa y diversos projectes propis.',
+
+  flutterCourseTitle: 'Curso de Flutter',
+  flutterCourseSubtitle: 'Julio 2025',
+  flutterCourseDesc:
+    'Completo un curso intensivo de Flutter para ampliar mis habilidades al desarrollo de aplicaciones mòbils multiplataforma.',
+
+  jobSearchTitle: 'En busca de oportunidades laborales',
+  jobSearchSubtitle: 'Actualidad',
+  jobSearchDesc:
+    'Estoy abierto a nuevas oportunidades donde pueda seguir creciendo como desarrollador y contribuir a proyectos ambiciosos.',
+
+  damStartTitle: 'Inicio del ciclo DAM (convalidado)',
+  damStartSubtitle: 'Septiembre 2025',
+  damStartDesc:
+    'Tras completar DAW, empiezo el ciclo de Desarrollo de Aplicaciones Multiplataforma (DAM), convalidando el primer curso. Mi objetivo es ampliar mis conocimientos en desarrollo de apps móviles y de escritorio.',
+  vue23: 'Vue.js 2 y 3',
+  compositionApi: 'Composition API',
+  responsiveDesign: 'Diseño responsivo',
+  componentization: 'Componentización',
+  languagesI18n: 'Idiomas (i18n)',
+  jwtAuth: 'Autenticación con JWT',
+  userRoleControl: 'Control de usuarios y roles',
+  restApis: 'APIs REST',
+  websocketsMqtt: 'WebSockets / MQTT',
+  fileUpload: 'Subida de archivos',
+  dockerCompose: 'Docker Compose',
+  cleanCode: 'Código limpio',
+  solidPrinciples: 'Principios SOLID',
+  testing: 'Testing',
+  mvcArchitecture: 'Arquitectura MVC',
+  microservices: 'Microservicios',
+  customSearch: 'Puedes buscar por nombre de proyecto o por tecnología',
+  platforms: 'PLATAFORMAS',
+  repository: 'REPOSITORIO',
+  technology: 'TECNOLOGÍAS',
+  details: 'Detalles',
+  seeRepository:' Mira el repositorio en GitHub',
+  travelsDesc: 'Descrube lugares - Inspira a las personas' ,
+  bingoDesc: 'Tu bombo de bingo perfecto!',
+  pixaDueloDesc: 'Comparte tus fotos y gana premios!',
+};

@@ -18,7 +18,7 @@
             self="bottom middle"
             :offset="[40, 40]"
           >
-            <strong>Puedes buscar por nombre de proyecto o por tecnología</strong>
+            <strong>{{t('customSearch')}}</strong>
           </q-tooltip>
         </q-icon>
 
@@ -35,6 +35,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import codeimg from '../assets/codeimage.jpg';
 import ProjectsCard from 'src/components/ProjectsCard.vue';
 type Project = {
@@ -57,11 +58,12 @@ type platform = {
 };
 
 //data
+const { t } = useI18n();
 const search = ref();
 const projects: Project[] = [
   {
     title: 'travels',
-    subtitle: 'Discover travels - Inspire people',
+    subtitle: 'travelsDesc',
     img: [
       '../../public/projectsImg/travels/1.png',
       '../../public/projectsImg/travels/2.png',
@@ -81,7 +83,7 @@ const projects: Project[] = [
   },
   {
     title: 'bombo bingo',
-    subtitle: 'Tu bombo de bingo perfecto!',
+    subtitle: 'bingoDesc',
 
     img: [
       '../../public/projectsImg/bingobombo/1.jpg',
@@ -99,7 +101,7 @@ const projects: Project[] = [
   },
   {
     title: 'pixaDuelo',
-    subtitle: 'Comparte tus fotos y gana premios!',
+    subtitle: 'pixaDueloDesc',
     img: [codeimg],
     url: 'https://travels.vilodev.com',
     finish: false,

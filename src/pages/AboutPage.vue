@@ -4,7 +4,7 @@
       <div class="intro">
         <section class="text">
           <div class="first">
-            <span class="text-intro">HOLA, MI NOMBRE ES</span>
+            <span class="text-intro">{{ t('heyMyName') }}</span>
             <span class="name">VICENT LOZANO</span>
           </div>
           <img class="me" src="../assets/yop.JPG" />
@@ -17,10 +17,9 @@
 
         <section class="intro-text">
           <p class="description">
-            Desarrollo aplicaciones web y móviles de principio a fin, combinando un frontend cuidado
-            con backends funcionales.
+            {{ t('textDes') }}
           </p>
-          <span class="findme">ENCUENTRAME</span>
+          <span class="findme">{{ t('findMe') }}</span>
           <section class="links-social">
             <q-btn
               flat
@@ -62,28 +61,24 @@
 
     <section class="where">
       <div class="full-image">
-        <h4 class="title-from">Mis origenes</h4>
+        <h4 class="title-from">{{ t('origin') }}</h4>
       </div>
       <div class="where-text">
-        <span class="from-subtitle">Desde Calpe programando con 💙</span>
+        <span class="from-subtitle">{{t('fromCalpe')}}💙</span>
         <article class="text-from">
           <span>
-            Tengo 31 años, soy padre y actualmente resido en Calpe, mi pequeño paraíso. Nací en
-            Alginet y desde pequeño me ha apasionado la tecnología y el poder de crear cosas desde
-            cero.<br />
+           {{ t('year31') }}<br />
             <br />
-            Tras años de esfuerzo, he retomado mis estudios y completado el ciclo de Desarrollo de
-            Aplicaciones Web. Hoy, me siento preparado para nuevos retos, con una base técnica
-            sólida y muchas ganas de seguir creciendo.
+            {{ t('grow') }}
           </span>
         </article>
       </div>
     </section>
-    <h4 class="section-tittle">Mis habilidades y conocimientos</h4>
+    <h4 class="section-tittle">{{ t('mySkills') }}</h4>
     <section class="skills">
       <section class="skills-schem" style="background-color: rgba(21, 100, 0, 0.1)">
         <div class="title-icon">
-          <h4>Program languages</h4>
+          <h4>{{t('progLang')}}</h4>
           <q-icon name="code" size="150px" class="section-icon" color="orange" />
         </div>
         <q-separator color="white" :vertical="$q.screen.width > 1200" />
@@ -168,7 +163,7 @@
 
       <section class="skills-schem" style="background-color: rgba(0, 128, 0, 0.1)">
         <div class="title-icon">
-          <h4>Good Practicess</h4>
+          <h4>{{t('goodPrac')}}</h4>
           <q-icon name="check_circle" size="150px" class="section-icon" color="green" />
         </div>
         <q-separator color="white" :vertical="$q.screen.width > 1200" />
@@ -184,139 +179,131 @@
       </section>
     </section>
     <section class="filosofy-grid">
-      <h4 class="section-tittle">Mi filosofia y valores</h4>
+      <h4 class="section-tittle">{{ t('myFilosofy') }}</h4>
       <section class="grid-valors">
         <div class="filosofy">
           <q-icon name="school" size="40px" />
-          <span class="title-skill">Aprendizaje continuo</span>
+          <span class="title-skill">{{t('continuousLearning')}}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="bolt" size="40px" />
-          <span class="title-skill">Esfuerzo y dedicación</span>
+          <span class="title-skill">{{t('effortAndDedication')}}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="group" size="40px" />
-          <span class="title-skill">Trabajo en equipo</span>
+          <span class="title-skill">{{t('teamwork')}}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="code" size="40px" />
-          <span class="title-skill">Código limpio y reutilizable</span>
+          <span class="title-skill">{{t('cleanAndReusableCode')}}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="trending_up" size="40px" />
-          <span class="title-skill">Búsqueda de la mejora continua</span>
+          <span class="title-skill">{{t('continuousImprovement')}}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="diversity_3" size="40px" />
-          <span class="title-skill">Respeto e integración</span>
+          <span class="title-skill">{{t('respectAndInclusion')}}</span>
         </div>
       </section>
     </section>
     <section class="timeline">
       <div class="q-px-lg q-py-md">
         <q-timeline :layout="layout" color="secondary">
-          <q-timeline-entry heading> Mis últimos pasos </q-timeline-entry>
+          <q-timeline-entry heading> {{t('lastSteps')}} </q-timeline-entry>
 
-          <q-timeline-entry title="Inicio del ciclo DAW" subtitle="Septiembre 2023" side="left">
+          <q-timeline-entry :title=" t('dawStartTitle') " :subtitle="t('dawStartSubtitle')" side="left">
             <div>
-              Decido comenzar el ciclo formativo de Desarrollo de Aplicaciones Web para dedicarme
-              profesionalmente al desarrollo.
+              {{t('dawStartDesc')}}
             </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="Formación Dual en AUTIS Ingenieros"
-            subtitle="Mayo 2024"
+            :title="t('dualTrainingTitle')"
+            :subtitle="t('dualTrainingSubtitle')"
             side="right"
             icon="school"
           >
             <div>
-              Inicio mi formación dual en AUTIS Ingenieros, combinando clases con experiencia en
-              empresa en un entorno profesional real.
+              {{t('dualTrainingDesc')}}
             </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="Becario en AUTIS Ingenieros"
-            subtitle="Marzo 2025"
+            :title="t('internTitle')"
+            :subtitle="t('internSubtitle')"
             side="left"
             icon="work"
           >
             <div>
-              Me incorporo como becario, aportando valor real a proyectos internos y consolidando
-              mis conocimientos en entornos productivos.
+             {{t('internDesc')}}
             </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="Creación de proyectos propios"
-            subtitle="Junio 2025"
+            :title="t('ownProjectsTitle')"
+            :subtitle="t('ownProjectsSubtitle')"
             side="right"
             icon="code"
           >
             <div>
-             Desarrollo proyectos personales con Vue, Quasar y Node.js para poner en práctica mis conocimientos y demostrar mi iniciativa.
+              {{t('ownProjectsDesc')}}
             </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="Finalización del ciclo DAW"
-            subtitle="Junio 2025"
+            :title="t('dawEndTitle')"
+            :subtitle="t('dawEndSubtitle')"
             side="left"
             color="orange"
             icon="done_all"
           >
             <div>
-              Obtengo el título de Técnico Superior en Desarrollo de Aplicaciones Web, con
-              experiencia práctica en empresa y diversos projectes propis.
+            {{t('dawEndDesc')}}
             </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="Curso de Flutter"
-            subtitle="Julio 2025"
+            :title="t('flutterCourseTitle')"
+            :subtitle="t('flutterCourseSubtitle')"
             side="right"
             icon="smartphone"
           >
             <div>
-              Completo un curso intensivo de Flutter para ampliar mis habilidades al desarrollo de
-              aplicaciones mòbils multiplataforma.
+            {{t('flutterCourseDesc')}}
             </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="En busca de oportunidades laborales"
-            subtitle="Actualidad"
+            :title="t('jobSearchTitle')"
+            :subtitle="t('jobSearchSubtitle')"
             side="left"
             icon="search"
           >
             <div>
-              Estoy abierto a nuevas oportunidades donde pueda seguir creciendo como desarrollador y
-              contribuir a proyectos ambiciosos.
+             {{t('jobSearchDesc')}}
             </div>
           </q-timeline-entry>
           <q-timeline-entry
-            title="Inicio del ciclo DAM (convalidado)"
-            subtitle="Septiembre 2025"
+            :title="t('damStartTitle')"
+            :subtitle="t('damStartSubtitle')"
             side="left"
             icon="school"
           >
             <div>
-              Tras completar DAW, empiezo el ciclo de Desarrollo de Aplicaciones Multiplataforma
-              (DAM), convalidando el primer curso. Mi objetivo es ampliar mis conocimientos en
-              desarrollo de apps móviles y de escritorio.
+              {{t('damStartDesc')}}
             </div>
           </q-timeline-entry>
         </q-timeline>
       </div>
     </section>
     <section class="social">
-      <h4 class="section-tittle">Social y CV</h4>
+      <h4 class="section-tittle">Social {{t('and')}} CV</h4>
       <section class="grid-valors">
         <div class="filosofy">
           <q-btn
@@ -328,7 +315,7 @@
             target="_blank"
             download
           />
-          <span class="title-skill">Curriculum</span>
+          <span class="title-skill">CV</span>
         </div>
         <div class="filosofy">
           <q-btn
@@ -395,13 +382,13 @@
     <section :class="$q.screen.width > 900 ? 'portfolio' : 'mobile-portfolio'">
       <div :class="$q.screen.width > 900 ? 'ask' : 'mobile-ask'">
         <q-icon name="mdi-folder-outline" size="50px" color="white"></q-icon>
-        <span class="text-ask">DESCUBRE MIS PROYECTOS</span>
+        <span class="text-ask">{{t('discoverProjects')}}</span>
       </div>
 
       <div :class="$q.screen.width > 900 ? 'actions' : 'mobile-actions'">
-        <router-link to="/projects" class="button-router"> MIS PROYECTOS</router-link>
+        <router-link to="/projects" class="button-router"> {{t('myProjects')}}</router-link>
 
-        <router-link to="/contact" class="button-router"> HABLAMOS?</router-link>
+        <router-link to="/contact" class="button-router"> {{ t('talk') }}</router-link>
       </div>
     </section>
   </div>
@@ -410,20 +397,17 @@
 <script setup lang="ts">
 import { useQuasar } from 'quasar';
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 //data
 const $q = useQuasar();
-type Skill = {
-  name: string;
-  icon: string;
-  color: string;
-};
+const { t } = useI18n();
 
-type SkillCategory = {
-  [category: string]: Skill[];
-};
 
-const skills: SkillCategory = {
+
+
+
+const skills = computed(() => ({
   languages: [
     { name: 'JavaScript (ES6+)', icon: 'mdi-language-javascript', color: 'yellow-10' },
     { name: 'HTML5', icon: 'mdi-language-html5', color: 'deep-orange-10' },
@@ -432,45 +416,37 @@ const skills: SkillCategory = {
     { name: 'NoSQL', icon: 'mdi-database-outline', color: 'green-10' },
     { name: 'Python', icon: 'mdi-language-python', color: 'blue-10' },
     { name: 'Dart', icon: 'fab fa-dart-lang', color: 'blue-6' },
-    {
-      name: 'TypeScript',
-      icon: 'mdi-language-typescript',
-      color: 'blue-10',
-    },
+    { name: 'TypeScript', icon: 'mdi-language-typescript', color: 'blue-10' },
   ],
-
   frontend: [
-    { name: 'Vue.js 2 y 3', icon: 'mdi-vuejs', color: 'light-green-10' },
+    { name: t('vue23'), icon: 'mdi-vuejs', color: 'light-green-10' },
     { name: 'Vue Router', icon: 'mdi-router-wireless', color: 'cyan-10' },
     { name: 'Pinia / Vuex', icon: 'mdi-database-sync', color: 'purple-8' },
     { name: 'Quasar Framework', icon: 'mdi-star-circle', color: 'amber-7' },
-    { name: 'Composition API', icon: 'mdi-code-braces', color: 'blue-grey-7' },
-    { name: 'Diseño responsivo', icon: 'mdi-cellphone-link', color: 'pink-5' },
-    { name: 'Componentización', icon: 'mdi-view-grid-plus-outline', color: 'deep-purple-7' },
-    { name: 'Idiomas (i18n)', icon: 'mdi-translate', color: 'purple-7' },
+    { name: t('compositionApi'), icon: 'mdi-code-braces', color: 'blue-grey-7' },
+    { name: t('responsiveDesign'), icon: 'mdi-cellphone-link', color: 'pink-5' },
+    { name: t('componentization'), icon: 'mdi-view-grid-plus-outline', color: 'deep-purple-7' },
+    { name: t('languagesI18n'), icon: 'mdi-translate', color: 'purple-7' },
     { name: 'Axios', icon: 'mdi-cloud-download-outline', color: 'blue-7' },
   ],
-
   backend: [
     { name: 'Node.js', icon: 'mdi-nodejs', color: 'green-10' },
     { name: 'Express.js', icon: 'mdi-server', color: 'grey-8' },
-    { name: 'Autenticación con JWT', icon: 'mdi-key', color: 'orange-10' },
-    { name: 'Control de usuarios y roles', icon: 'mdi-account-lock', color: 'red-9' },
-    { name: 'APIs REST', icon: 'mdi-api', color: 'deep-purple-10' },
-    { name: 'WebSockets / MQTT', icon: 'mdi-access-point-network', color: 'light-blue-10' },
-    { name: 'Subida de archivos', icon: 'mdi-file-upload-outline', color: 'amber-10' },
+    { name: t('jwtAuth'), icon: 'mdi-key', color: 'orange-10' },
+    { name: t('userRoleControl'), icon: 'mdi-account-lock', color: 'red-9' },
+    { name: t('restApis'), icon: 'mdi-api', color: 'deep-purple-10' },
+    { name: t('websocketsMqtt'), icon: 'mdi-access-point-network', color: 'light-blue-10' },
+    { name: t('fileUpload'), icon: 'mdi-file-upload-outline', color: 'amber-10' },
   ],
-
   devops: [
     { name: 'Git', icon: 'mdi-git', color: 'red-10' },
     { name: 'GitHub / Actions', icon: 'mdi-github', color: 'grey-10' },
     { name: 'CI/CD', icon: 'mdi-rocket-launch', color: 'purple-10' },
     { name: 'Docker', icon: 'mdi-docker', color: 'blue-10' },
-    { name: 'Docker Compose', icon: 'mdi-file-cog', color: 'indigo-7' },
+    { name: t('dockerCompose'), icon: 'mdi-file-cog', color: 'indigo-7' },
     { name: 'PM2', icon: 'mdi-cogs', color: 'brown-7' },
     { name: 'Nginx', icon: 'mdi-server-network', color: 'blue-grey-8' },
   ],
-
   cloud: [
     { name: 'AWS EC2', icon: 'mdi-aws', color: 'orange-8' },
     { name: 'AWS S3', icon: 'mdi-aws', color: 'orange-8' },
@@ -479,15 +455,14 @@ const skills: SkillCategory = {
     { name: 'Azure App Services', icon: 'mdi-microsoft-azure', color: 'blue-9' },
     { name: 'Azure Static Web', icon: 'mdi-microsoft-azure-devops', color: 'indigo-8' },
   ],
-
   goodPractice: [
-    { name: 'Código limpio', icon: 'mdi-code-tags-check', color: 'green-8' },
-    { name: 'Principios SOLID', icon: 'mdi-scale-balance', color: 'amber-9' },
-    { name: 'Testing', icon: 'fas fa-flask', color: 'deep-orange-7' },
-    { name: 'Arquitectura MVC', icon: 'mdi-view-dashboard-outline', color: 'blue-grey-7' },
-    { name: 'Microservicios', icon: 'mdi-lan', color: 'cyan-9' },
+    { name: t('cleanCode'), icon: 'mdi-code-tags-check', color: 'green-8' },
+    { name: t('solidPrinciples'), icon: 'mdi-scale-balance', color: 'amber-9' },
+    { name: t('testing'), icon: 'fas fa-flask', color: 'deep-orange-7' },
+    { name: t('mvcArchitecture'), icon: 'mdi-view-dashboard-outline', color: 'blue-grey-7' },
+    { name: t('microservices'), icon: 'mdi-lan', color: 'cyan-9' },
   ],
-};
+}));
 
 //computed
 const layout = computed(() => {

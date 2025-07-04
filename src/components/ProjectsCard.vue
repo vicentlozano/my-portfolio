@@ -1,12 +1,16 @@
 <template>
   <div class="project">
     <section class="carrusel" v-if="!actions">
-      <q-carousel swipeable animated v-model="slide" thumbnails infinite>
+      <q-carousel swipeable animated v-model="slide" thumbnails infinite class="carousel-bg">
+        <q-inner-loading :showing="loadingImages">
+          <q-spinner color="primary" size="50px" />
+        </q-inner-loading>
         <q-carousel-slide
           v-for="(img, index) in props.project.img"
           :key="img + index"
           :name="index"
           :img-src="img"
+          @img-loaded="index === 0 && onImgLoad()"
         >
           <div class="absolute-top text-subtitle1 text-center caption">
             <a class="link" :href="project.finish ? project.url : null"
@@ -26,7 +30,7 @@
                 self="bottom middle"
                 :offset="[40, 40]"
               >
-                <strong>Detalles</strong>
+                <strong>{{ t('details') }}</strong>
               </q-tooltip>
             </q-icon>
           </div>
@@ -45,12 +49,12 @@
       </div>
       <section class="title">
         {{ project.title.toUpperCase() }}
-        <span class="subtitle">{{ project.subtitle }}</span>
+        <span class="subtitle">{{ t(project.subtitle) }}</span>
       </section>
 
       <section class="details">
         <div class="acces">
-          <span class="title-tech">PLATAFORMAS</span>
+          <span class="title-tech">{{ t('platforms') }}</span>
           <div class="platforms">
             <q-btn
               v-for="platform in project.platforms"
@@ -73,17 +77,17 @@
           </div>
         </div>
         <div class="acces-repository">
-          <span class="title-tech" v-if="$q.screen.width > 700">REPOSITORIO</span>
+          <span class="title-tech" v-if="$q.screen.width > 700">{{ t('repository') }}</span>
           <div class="repository">
             <a :href="project.repository" target="_blank" class="github-link">
               <q-icon name="mdi-github" :size="$q.screen.width > 700 ? '60px' : '30px'"></q-icon>
-              🔗 Veure el repositori de GitHub
+              🔗 {{t('seeRepository')}}
             </a>
           </div>
         </div>
       </section>
       <section class="technologies">
-        <span class="title-tech">TECNOLOGÍAS</span>
+        <span class="title-tech">{{t('technology')}}</span>
         <div class="grid-tech">
           <div class="tech" v-for="technology in project.technologies" :key="technology.name">
             <q-icon :name="technology.icon" size="30px" />
@@ -98,6 +102,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useQuasar } from 'quasar';
+import { useI18n } from 'vue-i18n';
+
 //props&emits
 const props = defineProps({
   project: {
@@ -110,14 +116,21 @@ const props = defineProps({
   },
 });
 //data
+const { t } = useI18n();
 const $q = useQuasar();
 const slide = ref(0);
 const actions = ref(false);
+const loadingImages = ref(true);
 const platformColors: { android: string; ios: string; web: string } = {
   android: '#388e3c',
   ios: '#424242',
   web: '#3949ab',
 };
+
+//methods
+function onImgLoad() {
+  loadingImages.value = false;
+}
 </script>
 
 <style scoped>
@@ -133,7 +146,11 @@ const platformColors: { android: string; ios: string; web: string } = {
   border-radius: 15px;
   box-shadow: 0px 3px 9px rgba(213, 209, 209, 0.3);
 }
-
+.carrusel,
+.carousel-bg {
+  background: #181818 !important;
+  min-height: 400px;
+}
 .caption {
   width: 100%;
   padding: 1rem;
@@ -319,7 +336,7 @@ const platformColors: { android: string; ios: string; web: string } = {
 }
 @media (max-width: 450px) {
   .back-icon {
-    padding-top: 1.3rem ;
+    padding-top: 1.3rem;
   }
 }
 </style>
