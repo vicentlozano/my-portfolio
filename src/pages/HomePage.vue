@@ -2,7 +2,9 @@
   <div class="main">
     <section class="presentation">
       <article class="text-presentation">
-        <div class="first"><span class="hey">HOLA👋,</span></div>
+        <div class="first">
+          <span class="hey">{{ t('hello') }}👋,</span>
+        </div>
         <section class="typing-text">
           <span class="typing-text-content">{{ displayedText }}</span>
         </section>
@@ -24,75 +26,91 @@
     <section :class="$q.screen.width > 900 ? 'portfolio' : 'mobile-portfolio'">
       <div :class="$q.screen.width > 900 ? 'ask' : 'mobile-ask'">
         <q-icon name="mdi-folder-outline" size="50px" color="white"></q-icon>
-        <span class="text-ask">¿QUIERES VER TODOS MIS PROYECTOS?</span>
+        <span class="text-ask">{{ t('seeProjects') }}</span>
       </div>
 
       <div :class="$q.screen.width > 900 ? 'actions' : 'mobile-actions'">
-        <router-link to="/projects" class="button-router"> MIS PROYECTOS </router-link>
-        <router-link to="/aboutme" class="button-router"> CONÓCEME MEJOR</router-link>
+        <router-link to="/projects" class="button-router">{{t('myProjects')}}</router-link>
+        <router-link to="/aboutme" class="button-router"> {{t('knowMe')}}</router-link>
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-
+import { ref, watch, computed, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useQuasar } from 'quasar';
 
-//data
 const $q = useQuasar();
-const phrases = [
-  '¡Bienvenidos a Vilodev!',
-  'Soy Vicent Lozano',
-  'Desarrollador full-stack web, Android e iOS',
-  'Especializado en Javascript, Vue.js, Quasar, Node.js y Flutter',
-];
+const { t, locale } = useI18n();
+
 const currentPhraseIndex = ref(0);
 const displayedText = ref('');
 let charIndex = 0;
 let isDeleting = false;
+let typingTimeout: ReturnType<typeof setTimeout> | null = null;
 
-//methods
+// Frases reactives que cambian cuando cambia el idioma
+const phrases = computed(() => [
+  t('helowText'),
+  t('im'),
+  t('developer'),
+  t('skillsMessage')
+]);
+
 const scrollBottom = () => {
   window.scrollTo({
     top: document.body.scrollHeight,
-    behavior: 'smooth', // para un scroll suave
+    behavior: 'smooth',
   });
 };
+
 const typeEffect = () => {
-  const currentPhrase = phrases[currentPhraseIndex.value]!;
+  const currentPhrase = phrases.value[currentPhraseIndex.value] || '';
 
   if (!isDeleting) {
-    // Escriure lletres
     displayedText.value = currentPhrase.substring(0, charIndex + 1);
     charIndex++;
 
     if (charIndex === currentPhrase.length) {
-      // Esperar i començar a esborrar
       isDeleting = true;
-      setTimeout(typeEffect, 1000); // Esperar 2s abans d'esborrar
+      typingTimeout = setTimeout(typeEffect, 1000);
       return;
     }
   } else {
-    // Esborrar lletres
     displayedText.value = currentPhrase.substring(0, charIndex - 1);
     charIndex--;
 
     if (charIndex === 0) {
       isDeleting = false;
-      currentPhraseIndex.value = (currentPhraseIndex.value + 1) % phrases.length;
+      currentPhraseIndex.value = (currentPhraseIndex.value + 1) % phrases.value.length;
     }
   }
 
-  // Control de la velocitat
   const speed = isDeleting ? 50 : 100;
-  setTimeout(typeEffect, speed);
+  typingTimeout = setTimeout(typeEffect, speed);
 };
 
-onMounted(() => {
+const startTyping = () => {
+  // Reset states
+  currentPhraseIndex.value = 0;
+  charIndex = 0;
+  isDeleting = false;
+  if (typingTimeout) clearTimeout(typingTimeout);
   typeEffect();
+};
+
+// Lanzar typing al montar
+onMounted(() => {
+  startTyping();
 });
+
+// Reiniciar typing cuando cambie el idioma para actualizar frases
+watch(locale, () => {
+  startTyping();
+});
+
 </script>
 
 <style scoped>
