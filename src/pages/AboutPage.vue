@@ -10,7 +10,10 @@
           <img class="me" src="../assets/yop.JPG" />
 
           <div class="second">
-            <span class="subtitle">Full-Stack Developer | Web · iOS · Android</span>
+            <span class="subtitle"
+              ><span>Full-Stack Developer </span><span v-if="$q.screen.width > 500"> | </span
+              ><span>Web · iOS · Android</span></span
+            >
           </div>
         </section>
         <q-separator color="white" inset :vertical="$q.screen.width > 1200" />
@@ -64,10 +67,10 @@
         <h4 class="title-from">{{ t('origin') }}</h4>
       </div>
       <div class="where-text">
-        <span class="from-subtitle">{{t('fromCalpe')}}💙</span>
+        <span class="from-subtitle">{{ t('fromCalpe') }}💙</span>
         <article class="text-from">
           <span>
-           {{ t('year31') }}<br />
+            {{ t('year31') }}<br />
             <br />
             {{ t('grow') }}
           </span>
@@ -78,7 +81,7 @@
     <section class="skills">
       <section class="skills-schem" style="background-color: rgba(21, 100, 0, 0.1)">
         <div class="title-icon">
-          <h4>{{t('progLang')}}</h4>
+          <h4>{{ t('progLang') }}</h4>
           <q-icon name="code" size="150px" class="section-icon" color="orange" />
         </div>
         <q-separator color="white" :vertical="$q.screen.width > 1200" />
@@ -163,7 +166,7 @@
 
       <section class="skills-schem" style="background-color: rgba(0, 128, 0, 0.1)">
         <div class="title-icon">
-          <h4>{{t('goodPrac')}}</h4>
+          <h4>{{ t('goodPrac') }}</h4>
           <q-icon name="check_circle" size="150px" class="section-icon" color="green" />
         </div>
         <q-separator color="white" :vertical="$q.screen.width > 1200" />
@@ -183,43 +186,47 @@
       <section class="grid-valors">
         <div class="filosofy">
           <q-icon name="school" size="40px" />
-          <span class="title-skill">{{t('continuousLearning')}}</span>
+          <span class="title-skill">{{ t('continuousLearning') }}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="bolt" size="40px" />
-          <span class="title-skill">{{t('effortAndDedication')}}</span>
+          <span class="title-skill">{{ t('effortAndDedication') }}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="group" size="40px" />
-          <span class="title-skill">{{t('teamwork')}}</span>
+          <span class="title-skill">{{ t('teamwork') }}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="code" size="40px" />
-          <span class="title-skill">{{t('cleanAndReusableCode')}}</span>
+          <span class="title-skill">{{ t('cleanAndReusableCode') }}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="trending_up" size="40px" />
-          <span class="title-skill">{{t('continuousImprovement')}}</span>
+          <span class="title-skill">{{ t('continuousImprovement') }}</span>
         </div>
 
         <div class="filosofy">
           <q-icon name="diversity_3" size="40px" />
-          <span class="title-skill">{{t('respectAndInclusion')}}</span>
+          <span class="title-skill">{{ t('respectAndInclusion') }}</span>
         </div>
       </section>
     </section>
     <section class="timeline">
       <div class="q-px-lg q-py-md">
         <q-timeline :layout="layout" color="secondary">
-          <q-timeline-entry heading> {{t('lastSteps')}} </q-timeline-entry>
+          <q-timeline-entry heading> {{ t('lastSteps') }} </q-timeline-entry>
 
-          <q-timeline-entry :title=" t('dawStartTitle') " :subtitle="t('dawStartSubtitle')" side="left">
+          <q-timeline-entry
+            :title="t('dawStartTitle')"
+            :subtitle="t('dawStartSubtitle')"
+            side="left"
+          >
             <div>
-              {{t('dawStartDesc')}}
+              {{ t('dawStartDesc') }}
             </div>
           </q-timeline-entry>
 
@@ -230,7 +237,7 @@
             icon="school"
           >
             <div>
-              {{t('dualTrainingDesc')}}
+              {{ t('dualTrainingDesc') }}
             </div>
           </q-timeline-entry>
 
@@ -241,7 +248,7 @@
             icon="work"
           >
             <div>
-             {{t('internDesc')}}
+              {{ t('internDesc') }}
             </div>
           </q-timeline-entry>
 
@@ -252,7 +259,7 @@
             icon="code"
           >
             <div>
-              {{t('ownProjectsDesc')}}
+              {{ t('ownProjectsDesc') }}
             </div>
           </q-timeline-entry>
 
@@ -264,7 +271,7 @@
             icon="done_all"
           >
             <div>
-            {{t('dawEndDesc')}}
+              {{ t('dawEndDesc') }}
             </div>
           </q-timeline-entry>
 
@@ -275,7 +282,7 @@
             icon="smartphone"
           >
             <div>
-            {{t('flutterCourseDesc')}}
+              {{ t('flutterCourseDesc') }}
             </div>
           </q-timeline-entry>
 
@@ -286,7 +293,7 @@
             icon="search"
           >
             <div>
-             {{t('jobSearchDesc')}}
+              {{ t('jobSearchDesc') }}
             </div>
           </q-timeline-entry>
           <q-timeline-entry
@@ -296,14 +303,14 @@
             icon="school"
           >
             <div>
-              {{t('damStartDesc')}}
+              {{ t('damStartDesc') }}
             </div>
           </q-timeline-entry>
         </q-timeline>
       </div>
     </section>
     <section class="social">
-      <h4 class="section-tittle">Social {{t('and')}} CV</h4>
+      <h4 class="section-tittle">Social {{ t('and') }} CV</h4>
       <section class="grid-valors">
         <div class="filosofy">
           <q-btn
@@ -382,11 +389,11 @@
     <section :class="$q.screen.width > 900 ? 'portfolio' : 'mobile-portfolio'">
       <div :class="$q.screen.width > 900 ? 'ask' : 'mobile-ask'">
         <q-icon name="mdi-folder-outline" size="50px" color="white"></q-icon>
-        <span class="text-ask">{{t('discoverProjects')}}</span>
+        <span class="text-ask">{{ t('discoverProjects') }}</span>
       </div>
 
       <div :class="$q.screen.width > 900 ? 'actions' : 'mobile-actions'">
-        <router-link to="/projects" class="button-router"> {{t('myProjects')}}</router-link>
+        <router-link to="/projects" class="button-router"> {{ t('myProjects') }}</router-link>
 
         <router-link to="/contact" class="button-router"> {{ t('talk') }}</router-link>
       </div>
@@ -402,10 +409,6 @@ import { useI18n } from 'vue-i18n';
 //data
 const $q = useQuasar();
 const { t } = useI18n();
-
-
-
-
 
 const skills = computed(() => ({
   languages: [
@@ -804,5 +807,11 @@ p {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: minmax(200px, 1fr);
   }
+  .subtitle {
+display: grid;
+grid-template-rows: 1fr 1fr;
+gap: 0.3rem;
+padding-bottom: 0rem;
+}
 }
 </style>

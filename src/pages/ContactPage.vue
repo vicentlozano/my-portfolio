@@ -1,10 +1,10 @@
 <template>
   <div class="principal">
     <section class="talk">
-      <h2 class="title" :style="$q.screen.width < 500 ? 'margin-top:15px' : ''">¿Hablamos?</h2>
+      <h2 class="title" :style="$q.screen.width < 500 ? 'margin-top:15px' : ''">{{t('talk')}}</h2>
       <span class="subtitle">
-        Estoy siempre abierto a nuevas ideas, proyectos y desafíos.<br />
-        Si quieres construir algo juntos o simplemente charlar, ¡escríbeme!
+       {{t('contactSubtitle1')}}<br /><br/>
+        {{t('contactSubtitle2')}}
       </span>
       <div class="contact-info">
         <div class="info-item">
@@ -36,7 +36,7 @@
       <section class="location">
         <div class="section-title">
           <q-icon name="mdi-map" color="blue" size="40px"></q-icon>
-          <span class="title-info">Estoy aqui</span>
+          <span class="title-info">{{t('imHere')}}</span>
         </div>
         <div style="padding: 1rem; height: 100%; width: 100%">
           <div
@@ -55,7 +55,7 @@
         <section class="email-message">
           <div class="section-title">
             <q-icon name="email" color="red" size="40px"></q-icon>
-            <span class="title-info">Mandame un correo!</span>
+            <span class="title-info">{{t('sendEmail')}}</span>
           </div>
           <FormComponent />
         </section>
@@ -125,6 +125,10 @@
 <script setup lang="ts">
 import FormComponent from '../components/FormComponent.vue';
 import { onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+//data
+const { t } = useI18n();
 
 const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API;
 
@@ -160,11 +164,11 @@ const initMap = () => {
   // Crear contenido del InfoWindow
   const contentString = `
     <div>
-      <strong>Mi ubicación</strong><br/>
+      <strong>My Location</strong><br/>
       Avenida Masnou nº22, Escalera 3, 2B<br/>
       Calpe (Alicante), España<br/>
       <a href="https://www.google.com/maps/dir/?api=1&destination=38.643707275390625,0.041028741747140884" target="_blank">
-        Cómo llegar
+        Directions
       </a>
     </div>
   `;

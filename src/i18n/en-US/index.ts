@@ -105,4 +105,30 @@ export default {
   travelsDesc: 'Discover places - Inspire people',
   bingoDesc: 'Your perfect bingo drum!',
   pixaDueloDesc: 'Share your photos and win prizes!',
+  myExperience: 'My work experience',
+  contactSubtitle1: 'I’m always open to new ideas, projects, and challenges.',
+  contactSubtitle2:
+    'If you want to build something together or just have a chat, feel free to reach out!',
+  imHere: 'I’m here',
+  sendEmail: 'Send me an email!',
+  send: 'Send',
+  message: 'Message',
+  name: 'Name',
+  email: 'Email',
+  subject: 'Subject',
+  myLocation: 'My location',
+  getDirections: 'Get directions',
+  soon: 'Coming soon',
+  postedBy: 'posted by ',
+  post: 'Post',
+  post1_title: 'Watch out for translations!',
+  post1_intro: 'This is a test post',
+  post1_article:
+    "Today I want to share a reflection on something that, honestly, many developers overlook: translations. And I don't just mean translating single words, but everything involved in adapting an application to different languages and cultures.\n\nWhen I started translating my apps, I thought a simple JSON file and an automatic translator would be enough. Wrong! I realized that every language has its way of expressing things, its nuances and, above all, its context. For example, in Spanish we tend to use longer and more detailed phrases, while in English it goes straight to the point. Also, there are expressions that simply don't make sense if you translate them literally.\n\nAnother problem I found was space. Not all languages take up the same amount of space. Some phrases in German or French, for example, are much longer than in Spanish, and that can break the interface layout.\n\nMy personal advice is to spend time reviewing each translation, not only to make it correct, but to really connect with users. If you can, ask for help from someone who is a native speaker of the language. I also recommend using professional localization tools that allow you to manage and update texts easily.\n\nIn short, don't underestimate the importance of translations. It's not just a technical detail, it's a fundamental part of the user experience and can make the difference between a mediocre app and a truly professional app.",
+
+  post2_title: 'Static Page vs Dynamic App (With Backend)',
+  post2_intro:
+    'In this short post I leave you the keys to not overload a simple app if it is really not necessary.',
+  post2_article:
+    'Today I want to talk about a topic I have encountered several times both in personal projects and professional jobs: the difference between creating a static page and developing a dynamic application with backend.\n\nMany times, because of the desire to learn new technologies or simply inertia, we tend to complicate everything from the start. We think every website needs a backend, databases, APIs, authentication... but is it really necessary?\n\nIf your project is simply a website where you present information, like a personal portfolio, a simple blog, or a landing page, the most efficient is to make it static. With technologies like Vue, Nuxt, Astro, or even plain HTML you can generate super fast, secure and easy to maintain sites. Also, nowadays there are many free or very cheap hosting services that allow you to deploy static pages in minutes.\n\nHowever, if your project needs features like users, advanced validation forms, payment gateways or real-time data management, then it makes sense to build a backend. You can use Node.js, Laravel, Django, or whatever you prefer, but always wisely, avoiding "over-engineering".\n\nMy advice, after several projects, is always the same: start with the simplest that works. If later you see that the app needs more complexity, you\'ll have time to scale it. Often, less is more, and a good decision at the start can save you weeks of unnecessary work.\n\nThink about the end user and your own resources. The best app is not the most complex one, but the one that fulfills its function in the most efficient way possible.',
 };

@@ -1,0 +1,22 @@
+[
+  {
+    "title": "post1_title",
+    "img": "mdi-translate-icon.png",
+    "postedBy": "Vicent",
+    "date": "2025-07-04",
+    "sectionClass": "blog",
+    "intro": "post1_intro",
+    "type": "post",
+    "article": "post1_article"
+  },
+  {
+    "title": "post2_title",
+    "img": "Páginas_web_estáticas_vs_páginas_web_dinámicas.jpg",
+    "postedBy": "Vicent",
+    "date": "2025-07-05",
+    "sectionClass": "blog",
+    "intro": "post2_intro",
+    "type": "post",
+    "article": "post2_article"
+  }
+]

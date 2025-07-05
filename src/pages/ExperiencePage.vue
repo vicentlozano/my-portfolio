@@ -3,53 +3,49 @@
     <section class="timeline">
       <div class="q-px-lg q-py-md">
         <q-timeline :layout="layout" color="primary">
-          <q-timeline-entry heading>Mi experiencia laboral </q-timeline-entry>
+          <q-timeline-entry heading>{{t('myExperience')}} </q-timeline-entry>
 
           <q-timeline-entry
-            title="Formación Dual en AUTIS Ingenieros"
-            subtitle="Mayo 2024"
+            :title="t('dualTrainingTitle')"
+            :subtitle="t('dualTrainingSubtitle')"
             side="right"
             icon="school"
           >
             <div>
-              Inicio mi formación dual en AUTIS Ingenieros, combinando clases con experiencia en
-              empresa en un entorno profesional real.
+              {{t('dualTrainingDesc')}}
             </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="Becario en AUTIS Ingenieros"
-            subtitle="Marzo 2025"
+            :title="t('internTitle')"
+            :subtitle="t('internSubtitle')"
             side="left"
             icon="work"
           >
             <div>
-              Me incorporo como becario, aportando valor real a proyectos internos y consolidando
-              mis conocimientos en entornos productivos.
+              {{t('internDesc')}}
             </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="Creación de proyectos propios"
-            subtitle="Junio 2025"
+            :title="t('ownProjectsTitle')"
+            :subtitle="t('ownProjectsSubtitle')"
             side="right"
             icon="code"
           >
             <div>
-              Desarrollo proyectos personales con Vue, Quasar y Node.js para poner en práctica mis
-              conocimientos y demostrar mi iniciativa.
+             {{t('ownProjectsDesc')}}
             </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="En busca de oportunidades laborales"
-            subtitle="Actualidad"
+            :title="t('jobSearchTitle')"
+            :subtitle="t('jobSearchSubtitle')"
             side="left"
             icon="search"
           >
             <div>
-              Estoy abierto a nuevas oportunidades donde pueda seguir creciendo como desarrollador y
-              contribuir a proyectos ambiciosos.
+             {{t('jobSearchDesc')}}
             </div>
           </q-timeline-entry>
         </q-timeline>
@@ -58,12 +54,12 @@
     <section :class="$q.screen.width > 900 ? 'portfolio' : 'mobile-portfolio'">
       <div :class="$q.screen.width > 900 ? 'ask' : 'mobile-ask'">
         <q-icon name="mdi-folder-outline" size="50px" color="white"></q-icon>
-        <span class="text-ask">¿QUIERES VER TODOS MIS PROYECTOS?</span>
+        <span class="text-ask">{{t('seeProjects')}}</span>
       </div>
 
       <div :class="$q.screen.width > 900 ? 'actions' : 'mobile-actions'">
-        <router-link to="/projects" class="button-router"> MIS PROYECTOS </router-link>
-        <router-link to="/contact" class="button-router"> HABLAMOS?</router-link>
+        <router-link to="/projects" class="button-router"> {{t('myProjects')}} </router-link>
+        <router-link to="/contact" class="button-router"> {{t('talk')}}</router-link>
       </div>
     </section>
   </div>
@@ -72,6 +68,11 @@
 <script setup lang="ts">
 import { useQuasar } from 'quasar';
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+//data
+const { t } = useI18n();
+
 const $q = useQuasar();
 //computed
 const layout = computed(() => {
@@ -118,6 +119,16 @@ const layout = computed(() => {
   background-color: rgb(37, 127, 191);
   padding: 2.4rem 2rem;
   gap: 2rem;
+}
+.ask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.text-ask {
+  font-size: 1.1em;
+  letter-spacing: 2px;
 }
 .button-router {
   text-decoration: none;
