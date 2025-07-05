@@ -1,7 +1,8 @@
 <template>
   <section class="mini-header">
-    <div class="title"><span class="rotul">&lt;</span>vilodev<span class="rotul">/&gt;</span></div>
-    <section class="actions-route">
+    <router-link to="/" class="title">
+      <span class="rotul">&lt;</span>vilodev<span class="rotul">/&gt;</span>
+    </router-link>    <section class="actions-route">
       <div class="title-route">
         <span class="route-text">{{routeText }}</span>
       </div>
@@ -80,6 +81,7 @@ const routeText = computed(() => {
   text-align: center;
   font-weight: bold;
   font-size: 2rem;
+  text-decoration: none;
 }
 .rotul {
   color: rgb(13, 116, 211);

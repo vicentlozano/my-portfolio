@@ -1,8 +1,8 @@
 <template>
   <div class="header">
-    <section class="title" v-if="$q.screen.width > 800">
+    <router-link to="/" class="title" v-if="$q.screen.width > 800">
       <span class="rotul">&lt;</span>vilodev<span class="rotul">/&gt;</span>
-    </section>
+    </router-link>
     <section class="routes">
       <router-link to="/" :class="route.path === '/' ? 'custom-link on-route' : 'custom-link'">
         <q-icon class="pre-icon" name="mdi-home" />
@@ -161,6 +161,7 @@ watch(lang, (val) => {
   color: whitesmoke;
   font-weight: bold;
   font-size: 2rem;
+  text-decoration: none;
 }
 .custom-link {
   display: flex;
@@ -193,6 +194,7 @@ watch(lang, (val) => {
 .rotul {
   color: rgb(13, 116, 211);
   font-weight: 800;
+  cursor: pointer;
 }
 .center-flags {
   background-color: rgba(20, 31, 45, 0.662);
