@@ -9,7 +9,7 @@
       >
     </section>
     <section class="text">
-      <span class="title">{{ post.title }}</span> <span class="intro">{{ post.intro }}</span>
+      <span class="title">{{ t(post.title) }}</span> <span class="intro">{{ t(post.intro) }}</span>
     </section>
   </div>
 </template>

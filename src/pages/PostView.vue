@@ -1,7 +1,7 @@
 <template>
   <div class="backdiv" v-if="post">
     <section class="head">
-      <span class="title">{{ post.title }}</span>
+      <span class="title">{{ t(post.title) }}</span>
       <section class="info">
         <span
           >{{ t('postedBy') + post.postedBy }} | {{ post.date }} | {{ t(post.sectionClass) }}</span
@@ -45,11 +45,14 @@ function getImageUrl(img: string) {
   return new URL(`../assets/${img}`, import.meta.url).href;
 }
 const formattedArticle = computed(() => {
-  if (!post.value) return '';
-  return post.value.article
-    ?.split('\n\n')
+  if (!post.value || !post.value.article) return '';
+  const translated = t(post.value.article);
+  if (!translated) return '';
+
+  return translated
+    .split('\n\n')
     .map(paragraph => `<p>${paragraph}</p>`)
-    .join('') ?? '';
+    .join('');
 });
 
 const post = computed<Post | undefined>(() => posts.find((p: Post) => p.title === props.title));
