@@ -118,4 +118,6 @@ export default {
   myLocation: 'Mi ubicación',
   getDirections: 'Cómo llegar',
   soon: 'Próximamente',
+  postedBy: 'publicado por ',
+  post: 'Post'
 };

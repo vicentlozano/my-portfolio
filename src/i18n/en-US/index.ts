@@ -119,4 +119,6 @@ export default {
   myLocation: 'My location',
   getDirections: 'Get directions',
   soon: 'Coming soon',
+  postedBy: 'posted by ',
+  post: 'Post',
 };

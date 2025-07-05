@@ -1,30 +1,46 @@
 <template>
-  <div class="no-yet">
-    <h4 class="comment">
-      {{ t('soon') }}
-      <span class="dot">.</span>
-      <span class="dot">.</span>
-      <span class="dot">.</span>
-    </h4>
+  <div class="post-grid">
+    <PostBlogComponent v-for="post in typedPosts" :key="post.title" :post="post" />
   </div>
+  <RouterView/>
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-///data
-const { t } = useI18n();
+import PostBlogComponent from 'src/components/PostBlogComponent.vue';
+import posts from 'src/posts/posts.json'; // Importas el JSON directamente
+
+type Post = {
+  title: string;
+  img: string;
+  postedBy: string;
+  date: string;
+  sectionClass: string;
+  intro: string;
+  article?: string;
+};
+
+const typedPosts: Post[] = posts;
 </script>
 
 <style scoped>
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+
 .no-yet {
   display: grid;
   place-items: center;
   backdrop-filter: blur(20px);
 }
+
 .comment {
   text-align: center;
   color: whitesmoke;
 }
+
 .dot {
   opacity: 0;
   animation-name: blink;
@@ -51,4 +67,21 @@ const { t } = useI18n();
     opacity: 1;
   }
 }
+@media (min-width: 801px) and (max-width: 1300px) {
+ .post-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+  
+}
+@media (max-width: 800px) {
+  .post-grid {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+  }
 </style>

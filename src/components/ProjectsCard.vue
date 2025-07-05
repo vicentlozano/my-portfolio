@@ -1,20 +1,18 @@
 <template>
   <div class="project">
     <section class="carrusel" v-if="!actions">
+      <div v-if="loadingImages" class="blur-overlay"></div>
       <q-carousel swipeable animated v-model="slide" thumbnails infinite class="carousel-bg">
-        <q-inner-loading :showing="loadingImages">
-          <q-spinner color="primary" size="50px" />
-        </q-inner-loading>
         <q-carousel-slide
           v-for="(img, index) in props.project.img"
           :key="img + index"
           :name="index"
-          :img-src="img"
-          @img-loaded="index === 0 && onImgLoad()"
+          :img-src="getImageUrl(img, project.title)"
+          @img-loaded="index === 0 && onFirstImgLoad()"
         >
           <div class="absolute-top text-subtitle1 text-center caption">
-            <a class="link" :href="project.finish ? project.url : null"
-              >{{ project.title.toUpperCase() }}
+            <a class="link" :href="project.finish ? project.url : null">
+              {{ project.title.toUpperCase() }}
             </a>
           </div>
           <div v-if="!finish" class="absolute-center text-subtitle1 text-center text-white">
@@ -104,7 +102,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref,onMounted } from 'vue';
 import { useQuasar } from 'quasar';
 import { useI18n } from 'vue-i18n';
 
@@ -125,16 +123,24 @@ const $q = useQuasar();
 const slide = ref(0);
 const actions = ref(false);
 const loadingImages = ref(true);
+
 const platformColors: { android: string; ios: string; web: string } = {
   android: '#388e3c',
   ios: '#424242',
   web: '#3949ab',
 };
 
-//methods
-function onImgLoad() {
+function onFirstImgLoad() {
   loadingImages.value = false;
 }
+function getImageUrl(img: string, title: string) {
+  return new URL(`../assets/${title}/${img}`, import.meta.url).href;
+}
+onMounted(() => {
+  setTimeout(() => {
+    loadingImages.value = false;
+  }, 100);
+});
 </script>
 
 <style scoped>
@@ -154,6 +160,16 @@ function onImgLoad() {
 .carousel-bg {
   background: #181818 !important;
   min-height: 400px;
+  position: relative;
+}
+.blur-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(30, 32, 32, 0.25);
+  transition: backdrop-filter 0.3s;
+  pointer-events: none;
 }
 .caption {
   width: 100%;
@@ -366,7 +382,7 @@ function onImgLoad() {
 }
 @media (max-width: 450px) {
   .back-icon {
-    padding-top: 1.3rem;
+     padding-top: 1.3rem;
   }
 }
 </style>

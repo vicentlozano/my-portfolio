@@ -36,7 +36,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import codeimg from '../assets/codeimage.jpg';
 import ProjectsCard from 'src/components/ProjectsCard.vue';
 type Project = {
   title: string;
@@ -65,10 +64,10 @@ const projects: Project[] = [
     title: 'travels',
     subtitle: 'travelsDesc',
     img: [
-      '../../public/projectsImg/travels/1.png',
-      '../../public/projectsImg/travels/2.png',
-      '../../public/projectsImg/travels/3.png',
-      '../../public/projectsImg/travels/4.png',
+      '1.png',
+      '2.png',
+      '3.png',
+      '4.png',
     ],
     url: 'https://travels.vilodev.com',
     finish: true,
@@ -86,9 +85,9 @@ const projects: Project[] = [
     subtitle: 'bingoDesc',
 
     img: [
-      '../../public/projectsImg/bingobombo/1.jpg',
-      '../../public/projectsImg/bingobombo/2.jpg',
-      '../../public/projectsImg/bingobombo/3.jpg',
+      '1.jpg',
+      '2.jpg',
+      '3.jpg',
     ],
     url: 'https://travels.vilodev.com',
     repository: 'https://github.com/vicentlozano/androiBingo',
@@ -102,7 +101,7 @@ const projects: Project[] = [
   {
     title: 'pixaDuelo',
     subtitle: 'pixaDueloDesc',
-    img: [codeimg],
+    img: ['codeimage.jpg'],
     url: 'https://travels.vilodev.com',
     finish: false,
     repository: 'https://github.com/vicentlozano/pixa_duelo',
