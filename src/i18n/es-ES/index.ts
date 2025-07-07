@@ -21,8 +21,8 @@ export default {
   heyMyName: 'HOLA, MI NOMBRE ES',
   textDes:
     ' Desarrollo aplicaciones web y móviles de principio a fin, combinando un frontend cuidado con backends funcionales.',
-  findMe: 'ENCUENTRAME',
-  origin: 'Mis origenes',
+  findMe: 'ENCUÉNTRAME',
+  origin: 'Mis orígenes',
   fromCalpe: 'Desde Calpe programando con ',
   year31:
     ' Tengo 31 años, soy padre y actualmente resido en Calpe, mi pequeño paraíso. Nací en Alginet y desde pequeño me ha apasionado la tecnología y el poder de crear cosas desde cero.',
