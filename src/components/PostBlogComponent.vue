@@ -88,6 +88,8 @@ router.push({name:'post', params: {title: titleChild}})
   padding-bottom: 1.3rem;
 }
 .title {
+    text-align: left;
+
   font-size: 1.3em;
   letter-spacing: 1.4px;
   font-weight: bold;
