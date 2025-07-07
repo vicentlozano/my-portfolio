@@ -228,12 +228,5 @@ watch(lang, (val) => {
     padding: 0.5rem 0.5rem;
   }
 }
-@media (hover: none) and (pointer: coarse) {
-  .custom-link:hover {
-    border-radius: 5px;
-    border: 0;
-    backdrop-filter: none;
-    background-color: transparent;
-  }
-}
+
 </style>
