@@ -177,13 +177,7 @@ watch(lang, (val) => {
   border-radius: 5px;
   text-align: center;
 }
-.custom-link:hover {
-  border-radius: 20px;
-  border: 0.7px solid rgba(163, 152, 152, 0.904);
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.05);
-  transition: backdrop-filter 0.3s ease;
-}
+
 .on-route {
   border-radius: 20px;
   border: 0.7px solid rgba(163, 152, 152, 0.904);
@@ -208,6 +202,15 @@ watch(lang, (val) => {
   padding: 0.5rem;
   height: 100%;
   width: 100%;
+}
+@media (hover: hover) and (pointer: fine) {
+  .custom-link:hover {
+    border-radius: 20px;
+    border: 0.7px solid rgba(163, 152, 152, 0.904);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: backdrop-filter 0.3s ease;
+  }
 }
 @media (max-width: 800px) {
   .header {
