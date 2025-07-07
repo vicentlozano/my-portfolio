@@ -228,4 +228,9 @@ watch(lang, (val) => {
     padding: 0.5rem 0.5rem;
   }
 }
+@media (hover: none) and (pointer: coarse) {
+  .custom-link:hover {
+    all: unset;
+  }
+}
 </style>
