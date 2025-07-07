@@ -318,7 +318,7 @@
             round
             color="grey-8"
             icon="mdi-file-document"
-            href="../../public/filles/vicente-lozano-hervas-3-6-25.pdf"
+            href="/filles/vicente-lozano-hervas-3-6-25.pdf"
             target="_blank"
             download
           />
