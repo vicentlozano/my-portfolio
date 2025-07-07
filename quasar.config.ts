@@ -44,7 +44,6 @@ export default defineConfig((ctx) => {
         // extendTsConfig (tsConfig) {}
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -59,6 +58,8 @@ export default defineConfig((ctx) => {
       // minify: false,
       // polyfillModulePreload: true,
       distDir: 'dist/spa',
+      vueRouterMode: 'history', 
+      vueRouterBase: '/', //
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
