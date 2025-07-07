@@ -117,7 +117,7 @@ const submitForm = async () => {
     );
     $q.notify({
       color: 'positive',
-      message: 'Missatge enviat!',
+      message: t('sendMessage'),
       icon: 'send',
     });
     form.value = { name: '', email: '', subject: '', message: '' };
