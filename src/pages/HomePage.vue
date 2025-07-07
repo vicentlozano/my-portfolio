@@ -9,19 +9,19 @@
           <span class="typing-text-content">{{ displayedText }}</span>
         </section>
       </article>
-      <div class="next">
-        <q-btn
-          class="button-scroll"
-          flat
-          round
-          color="white"
-          icon="mdi-arrow-down"
-          @click="scrollBottom"
-        ></q-btn>
+      <div class="center-img">
+        <img class="logo" src="../assets/landing-image.png" alt="Logo" />
+        <div class="next">
+          <q-icon
+            class="button-scroll"
+            flat
+            square
+            :size="$q.screen.width > 500 ? '30px' : '20px'"
+            name="mdi-chevron-down"
+            @click="scrollBottom"
+          ></q-icon>
+        </div>
       </div>
-      <!-- <q-avatar class="custom-avatar" size="250px">
-        <img src="../assets/yop.JPG" class="yop" />
-      </q-avatar> -->
     </section>
     <section :class="$q.screen.width > 900 ? 'portfolio' : 'mobile-portfolio'">
       <div :class="$q.screen.width > 900 ? 'ask' : 'mobile-ask'">
@@ -30,8 +30,8 @@
       </div>
 
       <div :class="$q.screen.width > 900 ? 'actions' : 'mobile-actions'">
-        <router-link to="/projects" class="button-router">{{t('myProjects')}}</router-link>
-        <router-link to="/aboutme" class="button-router"> {{t('knowMe')}}</router-link>
+        <router-link to="/projects" class="button-router">{{ t('myProjects') }}</router-link>
+        <router-link to="/aboutme" class="button-router"> {{ t('knowMe') }}</router-link>
       </div>
     </section>
   </div>
@@ -52,12 +52,7 @@ let isDeleting = false;
 let typingTimeout: ReturnType<typeof setTimeout> | null = null;
 
 // Frases reactives que cambian cuando cambia el idioma
-const phrases = computed(() => [
-  t('helowText'),
-  t('im'),
-  t('developer'),
-  t('skillsMessage')
-]);
+const phrases = computed(() => [t('helowText'), t('im'), t('developer'), t('skillsMessage')]);
 
 const scrollBottom = () => {
   window.scrollTo({
@@ -110,7 +105,6 @@ onMounted(() => {
 watch(locale, () => {
   startTyping();
 });
-
 </script>
 
 <style scoped>
@@ -125,15 +119,27 @@ watch(locale, () => {
   height: auto;
 }
 .presentation {
-  padding: 2rem;
   height: calc(100vh - 5rem);
   display: grid;
+  justify-self: center;
   place-items: center;
-  grid-template-rows: 1fr min-content;
+  grid-template-rows: 1fr 1fr;
   background-color: rgba(255, 255, 255, 0.058);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(113, 145, 166, 0.4);
   gap: 2rem;
+}
+
+.logo {
+  max-width: 80%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    max-height: 200px;
+  }
 }
 .first {
   display: flex;
@@ -145,20 +151,22 @@ watch(locale, () => {
 
 .hey {
   padding: 1rem 2rem;
-  font-size: 1.6em;
+  font-size: 3em;
   color: whitesmoke;
-  background-color: rgb(37, 127, 191);
+  background-color: rgba(37, 127, 191, 0);
   border-radius: 8px;
   display: inline-block;
   white-space: nowrap; /* Manté tot en una línia */
 }
 .text-presentation {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 2rem;
+  grid-template-rows: min-content 1fr;
+  gap: 0rem;
   text-align: center;
+  align-self: center;
+  padding: 1rem 2rem;
   color: whitesmoke;
-  font-size: 2em;
+  font-size: 1.4em;
 }
 .custom-avatar {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -175,6 +183,9 @@ watch(locale, () => {
   border-right: 4px solid;
   width: 45ch;
   text-align: justify;
+}
+.next {
+  padding: 1rem;
 }
 .portfolio {
   display: grid;
@@ -234,23 +245,47 @@ watch(locale, () => {
 }
 .typing-text {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
   color: white;
   min-height: 3em;
   font-family: monospace;
 }
 .button-scroll {
-  animation: fade-opacity 2s ease-in-out infinite;
+  animation: 3s fade ease-in-out infinite;
+  background-color: white;
+  border-radius: 7px;
+  padding: 0.5rem;
 }
-
-@keyframes fade-opacity {
-  0%,
-  100% {
-    opacity: 1; /* totalmente visible */
+.button-scroll:hover {
+  color: white;
+  background-color: black;
+  animation: unset;
+}
+@keyframes fade {
+  0% {
+    opacity: 0%;
   }
   50% {
-    opacity: 0; /* semitransparente */
+    opacity: 100%;
   }
+  100% {
+    opacity: 0%;
+  }
+}
+.logo {
+  height: 300px;
+  width: 400px;
+}
+.center-img {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  padding: 1rem;
+  flex-direction: column;
+  justify-items: center;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.525);
 }
 @keyframes blinkCursor {
   50% {
@@ -259,8 +294,16 @@ watch(locale, () => {
 }
 @media (max-width: 800px) {
   .presentation {
-    padding: 1rem;
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 9rem);
+  }
+  .hey {
+    padding: 1rem 1rem;
+    font-size: 2.5em;
+    color: whitesmoke;
+    background-color: rgba(37, 127, 191, 0);
+    border-radius: 8px;
+    display: inline-block;
+    white-space: nowrap; /* Manté tot en una línia */
   }
 }
 @media (min-width: 1400px) {
@@ -277,6 +320,15 @@ watch(locale, () => {
     color: white;
     min-height: 3em;
     font-family: monospace;
+  }
+  .logo {
+    height: 130px;
+    width: 200px;
+  }
+  .hey {
+    padding: 1rem 1rem;
+    font-size: 1.6em;
+    
   }
 }
 </style>

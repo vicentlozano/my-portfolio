@@ -7,7 +7,7 @@
             <span class="text-intro">{{ t('heyMyName') }}</span>
             <span class="name">VICENT LOZANO</span>
           </div>
-          <img class="me" src="../assets/yop.JPG" />
+          <img class="me" src="../assets/yop.jpeg" />
 
           <div class="second">
             <span class="subtitle"
