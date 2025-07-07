@@ -29,7 +29,7 @@ export default {
   grow: 'Tras años de esfuerzo, he retomado mis estudios y completado el ciclo de Desarrollo de Aplicaciones Web. Hoy, me siento preparado para nuevos retos, con una base técnica sólida y muchas ganas de seguir creciendo.',
   mySkills: 'Mis habilidades y conocimientos',
   progLang: 'Lenguages de programación',
-  goodPrac: 'Buenas prácicas',
+  goodPrac: 'Buenas prácticas',
   myFilosofy: 'Mi filosofia y valores',
   continuousLearning: 'Aprendizaje continuo',
   effortAndDedication: 'Esfuerzo y dedicación',
