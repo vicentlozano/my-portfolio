@@ -3,7 +3,7 @@ name: Deploy Quasar Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - main # O la rama principal de tu repositorio (por ejemplo, master)
+      - master # O la rama principal de tu repositorio (por ejemplo, master)
 
 jobs:
   build-and-deploy:
