@@ -3,7 +3,10 @@ name: Deploy Quasar Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - master # O la rama principal de tu repositorio (por ejemplo, master)
+      - master # O 'main', la que sea tu rama principal
+
+permissions: # <--- ¡AÑADE ESTA SECCIÓN!
+  contents: write # Esto le da permiso para escribir en el repositorio
 
 jobs:
   build-and-deploy:
@@ -13,27 +16,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          # Necesario para que gh-pages-action pueda acceder al historial de Git para el despliegue
-          # Si usas un Personal Access Token (PAT) en lugar de GITHUB_TOKEN, deberías configurarlo aquí.
           persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Asegúrate de que esta versión coincide con la que usas localmente o con la de tu proyecto
+          node-version: '20'
 
       - name: Install dependencies
-        run: npm install # O yarn install si usas yarn
+        run: npm install
 
       - name: Build Quasar App
-        run: npm run build # O yarn build
+        run: npm run build
 
       - name: Copy index.html to 404.html for History Mode
         run: cp dist/spa/index.html dist/spa/404.html
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4 # Esta es la acción que hace el despliegue
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Token automático de GitHub
-          publish_dir: ./dist/spa # La carpeta que contiene tu SPA compilada
-          publish_branch: gh-pages # La rama donde se desplegará el sitio
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/spa
+          publish_branch: gh-pages
