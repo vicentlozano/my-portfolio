@@ -5,8 +5,8 @@ on:
     branches:
       - master # O 'main', la que sea tu rama principal
 
-permissions: # <--- ¡AÑADE ESTA SECCIÓN!
-  contents: write # Esto le da permiso para escribir en el repositorio
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -22,6 +22,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Create .env file
+        run: echo "VITE_GOOGLE_MAPS_API=${{ secrets.VITE_GOOGLE_MAPS_API }}" > .env
 
       - name: Install dependencies
         run: npm install
