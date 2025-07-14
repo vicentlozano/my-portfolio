@@ -328,7 +328,65 @@ watch(locale, () => {
   .hey {
     padding: 1rem 1rem;
     font-size: 1.6em;
-    
+  }
+}
+@media (max-height: 850px) and (min-width: 1000px) {
+  .typing-text {
+    font-size: 1.4em;
+    color: white;
+    min-height: 3em;
+    font-family: monospace;
+  }
+  .logo {
+    height: 130px;
+    width: 200px;
+  }
+  .hey {
+    padding: 1rem 1rem;
+    font-size: 1.6em;
+  }
+}
+@media (max-height: 850px) and (max-width: 999px) {
+  .typing-text {
+    font-size: 1.4em;
+    color: white;
+    min-height: 3em;
+    font-family: monospace;
+  }
+  .logo {
+    height: 130px;
+    width: 200px;
+  }
+  .hey {
+    padding: 1rem 1rem;
+    font-size: 1.6em;
+  }
+}
+@media (max-height: 530px) {
+  .presentation {
+    height: min-content;
+    display: grid;
+    justify-self: center;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+    background-color: rgba(255, 255, 255, 0.058);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(113, 145, 166, 0.4);
+    gap: 2rem;
+  }
+  .typing-text {
+    font-size: 1.4em;
+    color: white;
+    min-height: 3em;
+    font-family: monospace;
+  }
+  .logo {
+    height: 130px;
+    width: 200px;
+  }
+  .hey {
+    padding: 1rem 1rem;
+    font-size: 1.6em;
   }
 }
 </style>
