@@ -2,16 +2,19 @@
   <div class="main">
     <section class="presentation">
       <article class="text-presentation">
-        <div class="first">
-          <span class="hey">{{ t('hello') }}👋,</span>
-        </div>
+        <span class="hey">{{ t('hello') }}</span>
+        <span class="subtitle">{{ t('developer') }}</span>
+        <img
+          src="../assets/avataaars.svg"
+          alt="Avatar"
+          class="avatar"
+          :style="$q.screen.width < 500 || $q.screen.height < 700? { width: '200px', height: '200px' } : {}"
+        />
+      </article>
+      <div class="center-img">
         <section class="typing-text">
           <span class="typing-text-content">{{ displayedText }}</span>
         </section>
-      </article>
-      <div class="center-img">
-        <q-img class="logo" src="../assets/landing-image.png" alt="Logo" />
-
         <div class="next">
           <q-icon
             class="button-scroll"
@@ -53,7 +56,7 @@ let isDeleting = false;
 let typingTimeout: ReturnType<typeof setTimeout> | null = null;
 
 // Frases reactives que cambian cuando cambia el idioma
-const phrases = computed(() => [t('helowText'), t('im'), t('developer'), t('skillsMessage')]);
+const phrases = computed(() => [t('helowText'), t('skillsMessage'),t('takeALook')]);
 
 const scrollBottom = () => {
   window.scrollTo({
@@ -123,7 +126,7 @@ watch(locale, () => {
   display: grid;
   justify-self: center;
   place-items: center;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 4fr min-content;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(113, 145, 166, 0.4);
   gap: 2rem;
@@ -134,17 +137,16 @@ watch(locale, () => {
   max-height: 300px;
   object-fit: contain;
 }
-
-@media (max-width: 600px) {
-  .logo {
-    max-height: 200px;
-  }
+.avatar {
+  padding-top: 2rem;
 }
+
 .first {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 
 .hey {
@@ -152,19 +154,25 @@ watch(locale, () => {
   font-size: 3em;
   background-color: rgba(37, 127, 191, 0);
   border-radius: 8px;
-  display: inline-block;
-  white-space: nowrap; /* Manté tot en una línia */
+  display: flex;
+  text-wrap: wrap;
+  height: 100%;
+  align-items: center;
+  text-align: center;
 }
 .text-presentation {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: min-content min-content min-content;
   gap: 0rem;
   text-align: center;
   height: 100%;
   width: 100%;
-  align-self: center;
+  max-width: 1200px;
+  align-content: center;
+  justify-items: center;
   padding: 1rem 2rem;
   font-size: 1.4em;
+  font-weight: bold;
 }
 .custom-avatar {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -246,6 +254,8 @@ watch(locale, () => {
   text-align: center;
   font-size: 2em;
   min-height: 3em;
+  max-width: 1200px;
+
   font-family: monospace;
 }
 .button-scroll {
@@ -273,6 +283,25 @@ watch(locale, () => {
   height: 300px;
   width: 400px;
 }
+.typing-text {
+  text-align: center;
+  font-size: 2em;
+  min-height: 3em;
+  font-family: monospace;
+}
+.typing-text-content::after {
+  content: '|';
+  animation: blinkCursor 1s steps(1) infinite;
+}
+@keyframes blinkCursor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 .center-img {
   display: grid;
   grid-template-rows: 1fr min-content;
@@ -282,26 +311,13 @@ watch(locale, () => {
   height: 100%;
   align-items: center;
   width: 100%;
-  background-color: rgba(188, 181, 181, 0.184);
 }
 @keyframes blinkCursor {
   50% {
     border-color: transparent;
   }
 }
-@media (max-width: 800px) {
-  .presentation {
-    height: calc(100vh - 3.5rem);
-  }
-  .hey {
-    padding: 1rem 1rem;
-    font-size: 2.5em;
-    background-color: rgba(37, 127, 191, 0);
-    border-radius: 8px;
-    display: inline-block;
-    white-space: nowrap; /* Manté tot en una línia */
-  }
-}
+
 @media (min-width: 1400px) {
   .typing-text {
     font-size: 2.8em;
@@ -309,9 +325,9 @@ watch(locale, () => {
     font-family: monospace;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 650px) {
   .typing-text {
-    font-size: 1.2em;
+    font-size: 1.5em;
     min-height: 3em;
     font-family: monospace;
   }
@@ -321,7 +337,7 @@ watch(locale, () => {
   }
   .hey {
     padding: 1rem 1rem;
-    font-size: 1.6em;
+    font-size: 1.5em;
   }
 }
 @media (max-height: 850px) and (min-width: 1000px) {
@@ -339,45 +355,7 @@ watch(locale, () => {
     font-size: 1.6em;
   }
 }
-@media (max-height: 850px) and (max-width: 999px) {
-  .typing-text {
-    font-size: 1.4em;
-    min-height: 3em;
-    font-family: monospace;
-  }
-  .logo {
-    height: 130px;
-    width: 200px;
-  }
-  .hey {
-    padding: 1rem 1rem;
-    font-size: 1.6em;
-  }
-}
-@media (max-height: 530px) {
-  .presentation {
-    height: min-content;
-    display: grid;
-    justify-self: center;
-    place-items: center;
-    grid-template-rows: 1fr 1fr;
-    background-color: rgba(255, 255, 255, 0.058);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(113, 145, 166, 0.4);
-    gap: 2rem;
-  }
-  .typing-text {
-    font-size: 1.4em;
-    min-height: 3em;
-    font-family: monospace;
-  }
-  .logo {
-    height: 130px;
-    width: 200px;
-  }
-  .hey {
-    padding: 1rem 1rem;
-    font-size: 1.6em;
-  }
-}
+
+
+
 </style>
