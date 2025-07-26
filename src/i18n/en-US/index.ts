@@ -8,13 +8,14 @@ export default {
   aboutme: 'About me',
   projects: 'Projects',
   experience: 'Experience',
+  takeALook: 'Take a look!',
   contact: 'Contact',
   blog: 'Blog',
-  hello: 'Hello',
+  hello: "Hi, I'm Vicent Lozano",
   helowText: 'Welcome to Vilodev!',
   im: "I'm Vicent Lozano",
   developer: 'Full-stack web, Android and iOS developer',
-  skillsMessage: 'Specialized in Javascript, Vue.js, Quasar, Node.js and Flutter',
+  skillsMessage: "I build modern, fast, and cross-platform applications (web, Android, and iOS).",
   seeProjects: 'DO YOU WANT TO SEE ALL MY PROJECTS?',
   myProjects: 'MY PROJECTS',
   knowMe: 'GET TO KNOW ME BETTER',
@@ -117,6 +118,8 @@ export default {
   email: 'Email',
   subject: 'Subject',
   myLocation: 'My location',
+  english: 'English',
+  spanish: 'Spanish',
   getDirections: 'Get directions',
   soon: 'Coming soon',
   postedBy: 'posted by ',
@@ -131,5 +134,5 @@ export default {
     'In this short post I leave you the keys to not overload a simple app if it is really not necessary.',
   post2_article:
     'Today I want to talk about a topic I have encountered several times both in personal projects and professional jobs: the difference between creating a static page and developing a dynamic application with backend.\n\nMany times, because of the desire to learn new technologies or simply inertia, we tend to complicate everything from the start. We think every website needs a backend, databases, APIs, authentication... but is it really necessary?\n\nIf your project is simply a website where you present information, like a personal portfolio, a simple blog, or a landing page, the most efficient is to make it static. With technologies like Vue, Nuxt, Astro, or even plain HTML you can generate super fast, secure and easy to maintain sites. Also, nowadays there are many free or very cheap hosting services that allow you to deploy static pages in minutes.\n\nHowever, if your project needs features like users, advanced validation forms, payment gateways or real-time data management, then it makes sense to build a backend. You can use Node.js, Laravel, Django, or whatever you prefer, but always wisely, avoiding "over-engineering".\n\nMy advice, after several projects, is always the same: start with the simplest that works. If later you see that the app needs more complexity, you\'ll have time to scale it. Often, less is more, and a good decision at the start can save you weeks of unnecessary work.\n\nThink about the end user and your own resources. The best app is not the most complex one, but the one that fulfills its function in the most efficient way possible.',
-sendMessage: 'Message sent!'
+  sendMessage: 'Message sent!',
 };

@@ -11,7 +11,7 @@
           : 'white',
       color: $q.dark.isActive ? 'white' : 'black',
       backdropFilter: isScrolled ? 'blur(17px)' : 'none',
-      borderBottom: '1px solid ' + (isScrolled ? 'gray' : 'transparent'),
+      borderBottom: '1px solid ' + (isScrolled || menuOpen? 'gray' : 'transparent'),
     }"
   >
     <router-link to="/" class="custom-link no-border" @click="menuOpen = false">
