@@ -14,5 +14,28 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar-thumb {
   background-color: rgba(13, 116, 211, 0.7);
-  border: 6px solid rgba(0, 0, 0, 0); 
+  border: 6px solid rgba(0, 0, 0, 0);
+}
+body.body--dark {
+  background-color: rgb(29, 28, 28);
+  color: white;
+  .custom-link span {
+    color: white;
+  }
+
+  .custom-link .q-icon {
+    color: white;
+  }
+}
+
+body.body--light {
+  background-color: white;
+  color: black;
+  .custom-link span {
+    color: black;
+  }
+
+  .custom-link .q-icon {
+    color: black;
+  }
 }

@@ -2,9 +2,7 @@
   <q-form ref="formRef" @submit.prevent="submitForm" class="q-gutter-md q-pa-md form">
     <q-input
       filled
-      bg-color="blue-1"
       v-model="form.name"
-      label-color="black"
       :label="t('name')"
       dense
       :rules="[requiredRule]"
@@ -16,9 +14,7 @@
 
     <q-input
       filled
-      bg-color="blue-1"
       v-model="form.email"
-      label-color="black"
       :label="t('email')"
       type="email"
       dense
@@ -31,9 +27,7 @@
 
     <q-input
       filled
-      bg-color="blue-1"
       v-model="form.subject"
-      label-color="black"
       :label="t('subject')"
       dense
       :rules="[requiredRule]"
@@ -45,9 +39,7 @@
 
     <q-input
       filled
-      bg-color="blue-1"
       v-model="form.message"
-      label-color="black"
       :label="t('message')"
       type="textarea"
       :rows="5"

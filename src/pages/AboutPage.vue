@@ -7,11 +7,11 @@
             <span class="text-intro">{{ t('heyMyName') }}</span>
             <span class="name">VICENT LOZANO</span>
           </div>
-          <img class="me" src="../assets/yop.jpeg" />
+          <img class="me" src="../assets/myself2.jpg" />
 
           <div class="second">
             <span class="subtitle"
-              ><span>Full-Stack Developer </span><span v-if="$q.screen.width > 500"> | </span
+              ><span>Full-Stack Developer </span><span v-if="$q.screen.width > 700"> | </span
               ><span>Web · iOS · Android</span></span
             >
           </div>
@@ -79,12 +79,12 @@
     </section>
     <h4 class="section-tittle">{{ t('mySkills') }}</h4>
     <section class="skills">
-      <section class="skills-schem" style="background-color: rgba(21, 100, 0, 0.1)">
+      <section class="skills-schem" >
         <div class="title-icon">
           <h4>{{ t('progLang') }}</h4>
           <q-icon name="code" size="150px" class="section-icon" color="orange" />
         </div>
-        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+        <q-separator color="gray" :vertical="$q.screen.width > 1200" />
 
         <section class="grid-skills">
           <div v-for="(skill, index) in skills.languages" :key="index" class="skill">
@@ -101,7 +101,7 @@
           <h4>Frontend</h4>
           <q-icon name="palette" size="150px" class="section-icon" color="blue" />
         </div>
-        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+        <q-separator color="gray" :vertical="$q.screen.width > 1200" />
 
         <section class="grid-skills">
           <div v-for="(skill, index) in skills.frontend" :key="index" class="skill">
@@ -118,7 +118,7 @@
           <h4>Backend</h4>
           <q-icon name="dns" size="150px" class="section-icon" color="red" />
         </div>
-        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+        <q-separator color="gray" :vertical="$q.screen.width > 1200" />
 
         <section class="grid-skills">
           <div v-for="(skill, index) in skills.backend" :key="index" class="skill">
@@ -135,7 +135,7 @@
           <h4>DevOps</h4>
           <q-icon name="build_circle" size="150px" class="section-icon" color="grey" />
         </div>
-        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+        <q-separator color="gray" :vertical="$q.screen.width > 1200" />
 
         <section class="grid-skills">
           <div v-for="(skill, index) in skills.devops" :key="index" class="skill">
@@ -152,7 +152,7 @@
           <h4>Cloud</h4>
           <q-icon name="cloud" size="150px" class="section-icon" color="cyan" />
         </div>
-        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+        <q-separator color="gray" :vertical="$q.screen.width > 1200" />
 
         <section class="grid-skills">
           <div v-for="(skill, index) in skills.cloud" :key="index" class="skill">
@@ -169,7 +169,7 @@
           <h4>{{ t('goodPrac') }}</h4>
           <q-icon name="check_circle" size="150px" class="section-icon" color="green" />
         </div>
-        <q-separator color="white" :vertical="$q.screen.width > 1200" />
+        <q-separator color="gray" :vertical="$q.screen.width > 1200" />
 
         <section class="grid-skills">
           <div v-for="(skill, index) in skills.goodPractice" :key="index" class="skill">
@@ -329,7 +329,6 @@
             flat
             round
             size="20px"
-            color="white"
             icon="mdi-github"
             href="https://github.com/vicentlozano"
             target="_blank"
@@ -443,7 +442,7 @@ const skills = computed(() => ({
   ],
   devops: [
     { name: 'Git', icon: 'mdi-git', color: 'red-10' },
-    { name: 'GitHub / Actions', icon: 'mdi-github', color: 'grey-10' },
+    { name: 'GitHub / Actions', icon: 'mdi-github'},
     { name: 'CI/CD', icon: 'mdi-rocket-launch', color: 'purple-10' },
     { name: 'Docker', icon: 'mdi-docker', color: 'blue-10' },
     { name: t('dockerCompose'), icon: 'mdi-file-cog', color: 'indigo-7' },
@@ -496,6 +495,7 @@ const layout = computed(() => {
 .title-from {
   text-align: center;
   padding: 2rem;
+  color: white;
   background-color: rgba(41, 40, 39, 0.339);
 }
 
@@ -557,7 +557,6 @@ const layout = computed(() => {
   font-size: 1.2em;
   padding-right: 1rem;
   letter-spacing: 1.5px;
-  color: rgb(113, 112, 112);
 }
 .links-social {
   display: grid;
@@ -569,7 +568,7 @@ const layout = computed(() => {
 .section-tittle {
   padding: 3rem;
   gap: 2rem;
-  background-color: rgba(19, 118, 171, 0.435);
+  background-color: rgba(19, 118, 171, 0.619);
   text-align: center;
 }
 .findme {
@@ -586,13 +585,11 @@ const layout = computed(() => {
 
 .timeline {
   backdrop-filter: blur(20px);
-  background-color: rgba(237, 240, 241, 0.996);
 }
 .where {
   display: grid;
   grid-template-columns: 1.7fr 1fr;
   gap: 2rem;
-  background-color: white;
 }
 h2 {
   color: rgb(37, 127, 191);
@@ -603,7 +600,6 @@ h2 {
 }
 
 h4 {
-  color: whitesmoke;
   margin: 0;
   padding: 0;
 }
@@ -688,9 +684,7 @@ p {
 .skills {
   display: flex;
   flex-direction: column;
-  background-color: rgba(150, 136, 136, 0.316);
   h4 {
-    color: white;
     font-weight: bold;
   }
 }
@@ -700,7 +694,6 @@ p {
   grid-template-rows: 1fr;
   padding: 2rem;
   gap: 2rem;
-  background-color: rgba(240, 248, 255, 0.096);
 }
 
 .grid-skills {
@@ -715,16 +708,13 @@ p {
   gap: 0.4rem;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.418);
+  border: 1px solid gray;
   padding: 1rem;
-  background-color: rgba(14, 13, 13, 0.188);
   border-radius: 15px;
   width: 200px;
   box-shadow: 0px 3px 9px rgba(213, 209, 209, 0.3);
   height: 150px;
   text-align: center;
-
-  color: white;
   font-weight: bold;
 }
 .title-icon {
@@ -755,9 +745,8 @@ p {
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.418);
   padding: 1rem;
-  background-color: rgba(14, 13, 13, 0.188);
+  background-color: rgba(14, 13, 13, 0.115);
   box-shadow: 0px 3px 9px rgba(213, 209, 209, 0.3);
-  color: white;
   font-weight: bold;
 }
 /* actions */
@@ -792,7 +781,6 @@ p {
     gap: 0.4rem;
     width: 150px;
     height: 150px;
-    color: white;
     padding: 1rem;
     border: none;
   }
@@ -808,10 +796,10 @@ p {
     grid-auto-rows: minmax(200px, 1fr);
   }
   .subtitle {
-display: grid;
-grid-template-rows: 1fr 1fr;
-gap: 0.3rem;
-padding-bottom: 0rem;
-}
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.3rem;
+    padding-bottom: 0rem;
+  }
 }
 </style>

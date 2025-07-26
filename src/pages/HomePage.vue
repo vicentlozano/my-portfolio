@@ -10,7 +10,8 @@
         </section>
       </article>
       <div class="center-img">
-        <img class="logo" src="../assets/landing-image.png" alt="Logo" />
+        <q-img class="logo" src="../assets/landing-image.png" alt="Logo" />
+
         <div class="next">
           <q-icon
             class="button-scroll"
@@ -116,15 +117,13 @@ watch(locale, () => {
   flex-direction: column;
   justify-self: center;
   width: 100%;
-  height: auto;
 }
 .presentation {
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 3.5rem);
   display: grid;
   justify-self: center;
   place-items: center;
   grid-template-rows: 1fr 1fr;
-  background-color: rgba(255, 255, 255, 0.058);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(113, 145, 166, 0.4);
   gap: 2rem;
@@ -146,13 +145,11 @@ watch(locale, () => {
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: whitesmoke;
 }
 
 .hey {
   padding: 1rem 2rem;
   font-size: 3em;
-  color: whitesmoke;
   background-color: rgba(37, 127, 191, 0);
   border-radius: 8px;
   display: inline-block;
@@ -160,12 +157,13 @@ watch(locale, () => {
 }
 .text-presentation {
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 0rem;
   text-align: center;
+  height: 100%;
+  width: 100%;
   align-self: center;
   padding: 1rem 2rem;
-  color: whitesmoke;
   font-size: 1.4em;
 }
 .custom-avatar {
@@ -189,6 +187,7 @@ watch(locale, () => {
 }
 .portfolio {
   display: grid;
+  height: 8rem;
   grid-template-columns: 1.5fr 1fr;
   background-color: rgb(37, 127, 191);
   padding: 2.4rem 2rem;
@@ -246,13 +245,11 @@ watch(locale, () => {
 .typing-text {
   text-align: center;
   font-size: 2em;
-  color: white;
   min-height: 3em;
   font-family: monospace;
 }
 .button-scroll {
   animation: 3s fade ease-in-out infinite;
-  background-color: white;
   border-radius: 7px;
   padding: 0.5rem;
 }
@@ -285,7 +282,7 @@ watch(locale, () => {
   height: 100%;
   align-items: center;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.525);
+  background-color: rgba(188, 181, 181, 0.184);
 }
 @keyframes blinkCursor {
   50% {
@@ -294,12 +291,11 @@ watch(locale, () => {
 }
 @media (max-width: 800px) {
   .presentation {
-    height: calc(100vh - 9rem);
+    height: calc(100vh - 3.5rem);
   }
   .hey {
     padding: 1rem 1rem;
     font-size: 2.5em;
-    color: whitesmoke;
     background-color: rgba(37, 127, 191, 0);
     border-radius: 8px;
     display: inline-block;
@@ -309,7 +305,6 @@ watch(locale, () => {
 @media (min-width: 1400px) {
   .typing-text {
     font-size: 2.8em;
-    color: white;
     min-height: 3em;
     font-family: monospace;
   }
@@ -317,7 +312,6 @@ watch(locale, () => {
 @media (max-width: 450px) {
   .typing-text {
     font-size: 1.2em;
-    color: white;
     min-height: 3em;
     font-family: monospace;
   }
@@ -333,7 +327,6 @@ watch(locale, () => {
 @media (max-height: 850px) and (min-width: 1000px) {
   .typing-text {
     font-size: 1.4em;
-    color: white;
     min-height: 3em;
     font-family: monospace;
   }
@@ -349,7 +342,6 @@ watch(locale, () => {
 @media (max-height: 850px) and (max-width: 999px) {
   .typing-text {
     font-size: 1.4em;
-    color: white;
     min-height: 3em;
     font-family: monospace;
   }
@@ -376,7 +368,6 @@ watch(locale, () => {
   }
   .typing-text {
     font-size: 1.4em;
-    color: white;
     min-height: 3em;
     font-family: monospace;
   }

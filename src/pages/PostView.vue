@@ -10,7 +10,7 @@
     </section>
     <div class="post">
       <div class="hiden"><img class="post-img" :src="getImageUrl(post.img)" /></div>
-      <q-separator  color="black" inset  style="margin-right: 30%; margin-left: 30%;" />
+      <q-separator   inset  style="margin-right: 30%; margin-left: 30%;" />
 
       <section class="text">
         <article class="article" v-html="formattedArticle"></article>
@@ -62,7 +62,6 @@ const post = computed<Post | undefined>(() => posts.find((p: Post) => p.title ==
 .backdiv {
   display: flex;
   flex-direction: column;
-  background-color: white;
   place-content: center;
   width: 100%;
   height: 100%;
@@ -73,12 +72,10 @@ const post = computed<Post | undefined>(() => posts.find((p: Post) => p.title ==
   padding: 2rem;
   align-items: center;
   text-align: center;
-  background-color: rgb(229, 224, 218);
   text-transform: uppercase;
 }
 .post {
   display: grid;
-  background-color: white;
   justify-self: center;
   grid-template-rows: 400px min-content min-content;
   width: 100%;
@@ -106,7 +103,6 @@ const post = computed<Post | undefined>(() => posts.find((p: Post) => p.title ==
 .title {
   font-size: 1.5em;
   letter-spacing: 1.7px;
-  color: rgb(35, 33, 33);
   font-weight: 600;
 }
 .hiden {
@@ -122,7 +118,6 @@ const post = computed<Post | undefined>(() => posts.find((p: Post) => p.title ==
   text-align: justify;
   line-height: 1.6;
   font-size: 1rem;
-  color: #333;
 }
 @media (min-width:601px) and (max-width: 1100px) {
   .head {
