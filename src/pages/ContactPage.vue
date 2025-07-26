@@ -31,7 +31,7 @@
         </div>
       </div>
     </section>
-    <q-separator color="blue-3"></q-separator>
+    <q-separator inset color="blue-3"></q-separator>
     <section class="grid-contact">
       <section class="location">
         <div class="section-title">
@@ -61,7 +61,7 @@
         </section>
       </section>
     </section>
-    <q-separator color="blue-3"></q-separator>
+    <q-separator inset color="blue-3"></q-separator>
 
     <section class="links-social">
       <q-btn
@@ -77,7 +77,6 @@
         flat
         round
         :size="$q.screen.width < 500 ? '14px' : '20px'"
-        color="white"
         icon="mdi-github"
         href="https://github.com/vicentlozano"
         target="_blank"
@@ -232,7 +231,6 @@ onMounted(() => {
   grid-template-rows: min-content min-content 1fr;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.463);
 }
 .contact {
   display: flex;
@@ -249,12 +247,10 @@ onMounted(() => {
   padding: 2rem;
 }
 .title {
-  color: white;
   font-weight: bold;
   letter-spacing: 2px;
 }
 .subtitle {
-  color: rgb(215, 210, 210);
   font-weight: 500;
   padding: 0.3rem;
 }
@@ -281,7 +277,6 @@ onMounted(() => {
   padding-top: 3rem;
   padding-bottom: 1rem;
 
-  color: white;
 }
 .email-message {
   display: flex;
@@ -301,7 +296,6 @@ onMounted(() => {
   justify-content: space-around;
 }
 .title-info {
-  color: white;
   font-size: bold;
   font-size: 3em;
   font-weight: bold;
@@ -319,7 +313,6 @@ onMounted(() => {
   height: 100%;
   width: 100%;
   padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.338);
 }
 .location {
   display: flex;
@@ -334,7 +327,6 @@ onMounted(() => {
   align-self: end;
   place-content: center;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.338);
 }
 @media (min-width: 501px) and (max-width: 950px) {
   .grid-contact {
@@ -349,8 +341,7 @@ onMounted(() => {
     padding-top: 4rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    color: white;
-  }
+    }
   .info-text {
     text-align: center;
   }
@@ -364,7 +355,7 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     border: 1px solid grey;
-    background-color: rgba(0, 0, 0, 0.499);
+    background-color: rgba(0, 0, 0, 0.091);
     padding: 1rem;
     gap: 0.1rem;
     border-radius: 15px;
@@ -387,15 +378,14 @@ onMounted(() => {
     border: 1px solid grey;
     padding: 1rem;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.499);
+    background-color: rgba(0, 0, 0, 0.091);
   }
   .contact-info {
     display: grid;
     padding-top: 3rem;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    color: white;
-  }
+    }
   .info-text {
     text-align: center;
   }
@@ -404,8 +394,7 @@ onMounted(() => {
     justify-self: center;
   }
   .title {
-    color: white;
-    font-size: 3em;
+      font-size: 3em;
     font-weight: bold;
     letter-spacing: 2px;
   }

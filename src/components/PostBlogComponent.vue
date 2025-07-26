@@ -56,7 +56,6 @@ router.push({name:'post', params: {title: titleChild}})
   border-radius: 15px;
   box-shadow: 0px 3px 10px rgb(194, 181, 181);
   overflow: hidden;
-  background-color: white;
   cursor: pointer;
 }
 .mini-post:hover img{

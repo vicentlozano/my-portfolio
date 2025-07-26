@@ -5,8 +5,7 @@
       debounce="500"
       filled
       placeholder="Search"
-      bg-color="white"
-      style="padding: 2rem 2rem 0rem 2rem"
+      style="padding: 0.5rem 2rem 0rem 2rem"
     >
       <template v-slot:append>
         <q-icon name="info">

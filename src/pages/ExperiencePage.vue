@@ -82,8 +82,7 @@ const layout = computed(() => {
 
 <style scoped>
 .timeline {
-  background-color: rgba(20, 20, 20, 0.477);
-  color: white;
+  background-color: rgba(20, 20, 20, 0.101);
   height: 100%;
   padding-top: 2rem;
 }
