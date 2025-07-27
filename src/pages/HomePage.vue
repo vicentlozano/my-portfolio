@@ -325,6 +325,22 @@ watch(locale, () => {
     font-family: monospace;
   }
 }
+@media (min-width:651px) and (max-width:1399px){
+.typing-text {
+    font-size: 1.5em;
+    min-height: 3em;
+    font-family: monospace;
+  }
+  .logo {
+    height: 130px;
+    width: 200px;
+  }
+  .hey {
+    padding: 1rem 1rem;
+    font-size: 2em;
+  }
+
+}
 @media (max-width: 650px) {
  .presentation {
   grid-template-rows: 4fr 3fr;
@@ -348,20 +364,14 @@ watch(locale, () => {
     font-size: 1.5em;
   }
 }
-@media (max-height: 850px) and (min-width: 1000px) {
-  .typing-text {
-    font-size: 1.4em;
-    min-height: 3em;
-    font-family: monospace;
-  }
-  .logo {
-    height: 130px;
-    width: 200px;
-  }
-  .hey {
-    padding: 1rem 1rem;
-    font-size: 1.6em;
-  }
+
+@media(max-height: 600px){
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+ 
+}
 }
 
 
