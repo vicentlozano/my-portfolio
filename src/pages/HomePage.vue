@@ -126,7 +126,7 @@ watch(locale, () => {
   display: grid;
   justify-self: center;
   place-items: center;
-  grid-template-rows: 4fr min-content;
+  grid-template-rows: 4fr 2fr;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(113, 145, 166, 0.4);
   gap: 2rem;
@@ -305,7 +305,7 @@ watch(locale, () => {
 .center-img {
   display: grid;
   grid-template-rows: 1fr min-content;
-  padding: 1rem;
+  padding: 1rem 1rem 3rem 1rem;
   flex-direction: column;
   justify-items: center;
   height: 100%;
@@ -326,6 +326,7 @@ watch(locale, () => {
   }
 }
 @media (max-width: 650px) {
+ 
   .typing-text {
     font-size: 1.5em;
     min-height: 3em;
