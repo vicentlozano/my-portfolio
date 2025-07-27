@@ -8,7 +8,7 @@
           src="../assets/avataaars.svg"
           alt="Avatar"
           class="avatar"
-          :style="$q.screen.width < 500 || $q.screen.height < 700? { width: '200px', height: '200px' } : {}"
+          :style="$q.screen.width < 500 || $q.screen.height < 700? { width: '170px', height: '170px' } : {}"
         />
       </article>
       <div class="center-img">
@@ -326,7 +326,14 @@ watch(locale, () => {
   }
 }
 @media (max-width: 650px) {
+ .presentation {
+  grid-template-rows: 4fr 3fr;
  
+}
+.center-img {
+  padding: 1rem 1rem 5rem 1rem;
+  
+}
   .typing-text {
     font-size: 1.5em;
     min-height: 3em;
