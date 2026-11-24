@@ -34,11 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # postbuild (scripts/spa-route-pages.mjs) genera una carpeta por ruta y 404.html
       - name: Build Quasar App
         run: npm run build
-
-      - name: Copy index.html to 404.html for History Mode
-        run: cp dist/spa/index.html dist/spa/404.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
