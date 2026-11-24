@@ -318,7 +318,7 @@
             round
             color="grey-8"
             icon="mdi-file-document"
-            href="/filles/vicente-lozano-hervas-3-6-25.pdf"
+            :href="`${baseUrl}filles/vicente-lozano-hervas-3-6-25.pdf`"
             target="_blank"
             download
           />
@@ -408,6 +408,7 @@ import { useI18n } from 'vue-i18n';
 //data
 const $q = useQuasar();
 const { t } = useI18n();
+const baseUrl = import.meta.env.BASE_URL;
 
 const skills = computed(() => ({
   languages: [

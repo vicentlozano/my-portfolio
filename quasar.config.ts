@@ -50,7 +50,7 @@ export default defineConfig((ctx) => {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      publicPath: '/', // <--- debe ser exactamente así
+      publicPath: '/my-portfolio/', // repo de proyecto en GitHub Pages: https://vicentlozano.github.io/my-portfolio/
       // analyze: true,
       // env: {},
       // rawDefine: {}
@@ -59,7 +59,7 @@ export default defineConfig((ctx) => {
       // polyfillModulePreload: true,
       distDir: 'dist/spa',
       vueRouterMode: 'history',
-      vueRouterBase: '/', //
+      vueRouterBase: '/my-portfolio/',
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
