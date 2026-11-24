@@ -12,6 +12,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",
+    "postbuild": "node scripts/spa-route-pages.mjs",
     "postinstall": "quasar prepare",
     "deploy": "gh-pages -d dist/spa"
   },
